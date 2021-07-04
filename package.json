@@ -1,24 +1,23 @@
 {
-  "name": "HammersportMarketing",
+  "name": "SpanishALaCarte",
   "version": "1.0.0",
-  "description": "Hammersportmarketing theme packages",
+  "description": "SpanishALaCarte Theme Packages",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-    "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
-    "clean": "rm -rf build/*"
+    "dev": "webpack --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HammerSport-Marketing/Phase4-WordpressTheme.git"
+    "url": "git+https://github.com/fuhranku/SpanishALaCarta-Theme"
   },
   "keywords": [],
   "author": "Frank Ponte",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HammerSport-Marketing/Phase4-WordpressTheme/issues"
+    "url": "https://github.com/fuhranku/SpanishALaCarta-Theme/issues"
   },
-  "homepage": "https://github.com/HammerSport-Marketing/Phase4-WordpressTheme#readme",
+  "homepage": "https://github.com/fuhranku/SpanishALaCarta-Theme#readme",
   "browserslist": [
     "defaults"
   ],
@@ -31,10 +30,12 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "cssnano": "^5.0.1",
+    "dotenv-webpack": "^7.0.3",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^1.5.0",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "resolve-url-loader": "^4.0.0",
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "sass-mq": "^5.0.1",
@@ -42,6 +43,21 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.34.0",
-    "webpack-cli": "^4.6.0"
+    "webpack-cli": "^4.6.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@popperjs/core": "^2.9.2",
+    "animate.css": "^4.1.1",
+    "awesome-notifications": "^3.1.1",
+    "bootstrap": "^5.0.2",
+    "include-media": "^1.4.10",
+    "intl-tel-input": "^17.0.13",
+    "is-in-viewport": "^3.0.4",
+    "jquery": "^3.6.0",
+    "lazysizes": "^5.3.2",
+    "popper.js": "^1.16.1",
+    "swiper": "^6.7.5"
   }
 }

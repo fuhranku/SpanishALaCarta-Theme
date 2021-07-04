@@ -3,14 +3,14 @@
 /**
  * Bootstraps the theme
  * 
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
-namespace HAMMERSPORTMARKETING\Inc;
+namespace SPANISHALACARTE\Inc;
 
-use HAMMERSPORTMARKETING\Inc\Traits\Singleton;
+use SPANISHALACARTE\Inc\Traits\Singleton;
 
-class HSM_THEME{
+class SALC_THEME{
 	use Singleton;
 
 	protected function __construct() {
@@ -118,6 +118,5 @@ class HSM_THEME{
 		 * @see https://developer.wordpress.org/block-editor/developers/themes/theme-support/#editor-styles
 		 */
 		add_theme_support( 'editor-styles' );
-
     }
 }

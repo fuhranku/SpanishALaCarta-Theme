@@ -22,10 +22,10 @@
  *
  * If you specifically need multiple objects, then use a normal class.
  *
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
- namespace HAMMERSPORTMARKETING\Inc\Traits;
+ namespace SPANISHALACARTE\Inc\Traits;
 
  trait Singleton{
     public function __contruct(){}
@@ -40,7 +40,7 @@
         if( !isset($instance[$called_class]) ){
             $instance[ $called_class ] = new $called_class();
             
-            do_action( sprintf('hsm_theme_singleton_init: %s', $called_class) );
+            do_action( sprintf('salc_theme_singleton_init: %s', $called_class) );
         }
         return $instance[$called_class];
     }

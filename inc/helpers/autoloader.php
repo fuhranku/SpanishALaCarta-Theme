@@ -2,10 +2,10 @@
 /**
  * Autoloader file for theme.
  *
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
-namespace HAMMERSPORTMARKETING\Inc\Helpers;
+namespace SPANISHALACARTE\Inc\Helpers;
 
 /**
  * Auto loader function.
@@ -16,7 +16,7 @@ namespace HAMMERSPORTMARKETING\Inc\Helpers;
  */
 function autoloader( $resource = '' ) {
 	$resource_path  = false;
-	$namespace_root = 'HAMMERSPORTMARKETING\\';
+	$namespace_root = 'SPANISHALACARTE\\';
 	$resource       = trim( $resource, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
@@ -84,4 +84,4 @@ function autoloader( $resource = '' ) {
 
 }
 
-spl_autoload_register( '\HAMMERSPORTMARKETING\Inc\Helpers\autoloader' );
+spl_autoload_register( '\SPANISHALACARTE\Inc\Helpers\autoloader' );

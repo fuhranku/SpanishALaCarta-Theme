@@ -2,12 +2,12 @@
 /**
  * Register menus
  * 
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
- namespace HAMMERSPORTMARKETING\Inc;
+ namespace SPANISHALACARTE\Inc;
 
- use HAMMERSPORTMARKETING\Inc\Traits\Singleton;
+ use SPANISHALACARTE\Inc\Traits\Singleton;
 
  class Menus{
      use Singleton;
@@ -25,8 +25,8 @@
 
     public function register_menus(){
         register_nav_menus( [
-            'hsm-header-menu' => esc_html__( 'Header Menu', 'hammersportmarketing' ),
-            'hsm-footer-menu' => esc_html__( 'Footer Menu', 'hammersportmarketing' )
+            'salc-header-menu' => esc_html__( 'Header Menu', 'spanishalacarta' ),
+            'salc-footer-menu' => esc_html__( 'Footer Menu', 'spanishalacarta' )
         ]);
     }
 

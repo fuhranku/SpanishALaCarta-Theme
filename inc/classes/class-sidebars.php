@@ -2,12 +2,12 @@
 /**
  * Theme sidebars
  * 
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
- namespace HAMMERSPORTMARKETING\Inc;
+ namespace SPANISHALACARTE\Inc;
 
- use HAMMERSPORTMARKETING\Inc\Traits\Singleton;
+ use SPANISHALACARTE\Inc\Traits\Singleton;
 
  class Sidebars{
      use Singleton;
@@ -21,7 +21,6 @@
     protected function setup_hooks(){
         // Actions and filters 
         add_action('widgets_init', [$this, 'register_sidebars']);
-        add_action('widgets_init', [$this, 'register_clock_widget']);
     }
 
     public function register_sidebars(){
@@ -48,10 +47,6 @@
                 'after_title'   => '</h3>',
             ]
         );
-    }
-
-    public function register_clock_widget(){
-        register_widget('HAMMERSPORTMARKETING\Inc\Clock_Widget');
     }
 
  }

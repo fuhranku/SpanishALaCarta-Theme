@@ -1,0 +1,17 @@
+/**  
+ * Vendor imports for the theme
+ */
+
+// Theme imports
+@import "~swiper/swiper-bundle.css";
+@import "~intl-tel-input/build/css/intlTelInput.css";
+@import "~awesome-notifications/dist/style.css";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/functions";
+// Required
+@import "./vendors-extensions/bootstrap-sizing";
+@import "./vendors-extensions/bootstrap";
+
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~animate.css/animate.css";

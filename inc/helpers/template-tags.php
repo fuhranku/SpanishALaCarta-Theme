@@ -2,7 +2,7 @@
 /**
  * Custom template tags for the theme.
  *
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
 /**

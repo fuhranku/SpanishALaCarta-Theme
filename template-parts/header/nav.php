@@ -2,10 +2,10 @@
 /**
  * Header Navigation Template
  * 
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
-$menu_class = \HAMMERSPORTMARKETING\Inc\Menus::get_instance();
-$header_menu_id = $menu_class->get_menu_id('hsm-header-menu');
+$menu_class = \SPANISHALACARTE\Inc\Menus::get_instance();
+$header_menu_id = $menu_class->get_menu_id('salc-header-menu');
 $header_menu = wp_get_nav_menu_items($header_menu_id);
 
 ?>

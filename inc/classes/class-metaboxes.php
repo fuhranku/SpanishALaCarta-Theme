@@ -3,12 +3,12 @@
 /**
  * Register meta boxees
  *
- * @package Hammersportmarketing
+ * @package SpanishALaCarte
  */
 
-namespace HAMMERSPORTMARKETING\Inc;
+namespace SPANISHALACARTE\Inc;
 
-use HAMMERSPORTMARKETING\Inc\Traits\Singleton;
+use SPANISHALACARTE\Inc\Traits\Singleton;
 
 class MetaBoxes
 {

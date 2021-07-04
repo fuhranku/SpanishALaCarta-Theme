@@ -3,7 +3,7 @@
 /**
  *   Theme functions.
  *  
- *  @package hammersportmarketing
+ *  @package SpanishALaCarte
  */
 
 // echo '<pre>';
@@ -45,11 +45,11 @@ if (!defined('HSM_BUILD_CSS_DIR_PATH')){
 require_once HSM_DIR_PATH . '/inc/helpers/autoloader.php';
 require_once HSM_DIR_PATH . '/inc/helpers/template-tags.php';
 
-function hsm_get_theme_instance(){
-    \HAMMERSPORTMARKETING\Inc\HSM_THEME::get_instance();
+function salc_get_theme_instance(){
+    \SPANISHALACARTE\Inc\SALC_THEME::get_instance();
 }
 
-hsm_get_theme_instance();
+salc_get_theme_instance();
 
 
 

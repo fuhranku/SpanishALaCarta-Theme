@@ -7,6 +7,6 @@
 get_header();
  ?>
 
- <div>Frontpage</div>
+ <div><?php pll_e( "Frontpage" )?></div>
 
  <?php get_footer(); ?>
