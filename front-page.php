@@ -7,6 +7,6 @@
 get_header();
  ?>
 
- <div><?php pll_e( "Frontpage" )?></div>
+ <div style="height:70vh;"><?php pll_e( "Frontpage" )?></div>
 
  <?php get_footer(); ?>

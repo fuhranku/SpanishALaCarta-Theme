@@ -1,17 +1,65 @@
-.main-footer{
-    margin-top: 1rem;
-    // Footer Slider Gallery
-    &__slide-gallery{
-        width: 100%;
-        overflow:hidden;
-        margin-bottom: 1rem;
-        .swiper-wrapper{
-        width: 40%;
-            .swiper-slide {
-                background-position: center;
-                background-size: cover;
-                height: 40vh;
-            }
+#footer-newsletter-form{
+    border-bottom: 2px solid $white;
+    display: flex;
+    input{
+        border: none;
+        background-color: transparent;
+        color: $gray;
+        padding: .6rem 0;
+        &::placeholder{
+            color: $gray;
+        }
+        &:focus-visible{
+            outline: none;
+        }
+        width: -webkit-fill-available;
+    }
+    .btn-newsletter-submit{
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        color: $white;
+        font-size: 1.3rem;
+    }
+}
+
+.footer-list{
+    border-radius: 0;
+    .list-group-item{
+        background: transparent;
+        color: $white;
+        display: flex;
+        align-items: center;
+        .footer-icon{
+            font-size: 1.5rem;
+        }
+        a{
+            color: $primary;
+        }
+        &:not(:last-child){
+            border-bottom: 1px solid rgba($white, .6);
+        }
+        &:first-child{
+            border-top: 1px solid rgba($white, .6);
         }
     }
+}
+
+#footer-posts-list{
+    li{
+        transition: .4s all ease-in-out;
+        &:hover{
+            background: rgb(126 140 164 / 63%);
+        }
+        a{
+            &:hover{
+                color: $white !important;
+            }
+            color: $white;
+            text-decoration: none;
+            p{
+                margin: 0;
+            }
+        }
+    } 
 }

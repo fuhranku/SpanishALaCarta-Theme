@@ -18,8 +18,9 @@
     <?php wp_body_open(  ); ?>
 
 <div id="page" class="site">
-    <header id="mainHeader" class="site-header" role="banner">
+    <header id="mainHeader" class="site-header position-relative" role="banner">
         <?php get_template_part('template-parts/header/nav'); ?>
+        <?php get_template_part('template-parts/header/banners/home-banner'); ?>
     </header>
     <div id="content" class="site-content">
 

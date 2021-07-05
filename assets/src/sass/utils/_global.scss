@@ -1,0 +1,33 @@
+.wpadminbar-exists{
+    top: 0 !important;
+}
+  
+@include media(">=mobile-l"){
+    .wpadminbar-exists{
+        top: 50px !important;
+    }
+}
+
+.w-fit-content{
+    width: fit-content;
+}
+
+.text-blue{
+    color: $secondary;
+}
+
+.text-red{
+    color: $primary;
+}
+
+.bg-yellow{
+    background-color: $yellow;
+}
+
+.bg-dark-blue{
+    background-color: #041A40;
+}
+
+.bg-blue{
+    background-color: $secondary;
+}

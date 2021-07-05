@@ -1,0 +1,38 @@
+.header-menu{
+    font-weight: 400;
+    .navbar-nav{
+        .nav-link{
+            color: $white;
+            transition: .4s all ease-in-out;
+            &:hover,&:active{
+                color: $primary;
+            }
+            &.active{
+                font-weight: bold;
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 10px;
+            }
+        }
+    }
+}
+
+#mainHeader.fixed-top{
+    animation: smoothScroll 1s forwards;
+}
+
+@keyframes smoothScroll {
+	0% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#mainNavbar{
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+}
+

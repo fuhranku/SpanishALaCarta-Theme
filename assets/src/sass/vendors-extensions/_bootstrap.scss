@@ -1,14 +1,48 @@
-$primary:       #154B10 !default;
-// $secondary:     $gray-600 !default;
-// $success:       $green !default;
-// $info:          $cyan !default;
-// $warning:       $yellow !default;
-// $danger:        $red !default;
-// $light:         $gray-100 !default;
-// $dark:          $gray-800 !default;
+@import "../utils/colors";
+@import "../utils/variables";
 
 .dropdown-item{
     &:active{
         color: #fff !important;
+    }
+}
+
+.btn{
+    border-radius: 60px;
+    background-color: #FF2243;
+    border-color: $primary;
+    padding: .5rem 2rem;
+    border-width: 2px;
+}
+
+.btn-primary{
+    border-radius: 60px;
+    background-color: #FF2243;
+    border-color: $primary;
+    padding: .5rem 2rem;
+    transition: .4s all ease-in-out;
+    &:hover{
+        border-color: $primary;
+        background-color: transparent;
+        color: $primary;
+    }
+}
+
+.btn-header{
+    background: transparent;
+    border: 2px solid $white;
+    color: $white;
+    transition: all .4s ease-in-out;
+    text-transform: capitalize;
+    &:hover,&:active{
+        background: $white;
+        border-color: $white;
+        color: $primary;
+    }
+}
+
+@include media(">=1400px"){
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1400px;
     }
 }

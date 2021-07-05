@@ -9,6 +9,7 @@
 namespace SPANISHALACARTE\Inc;
 
 use SPANISHALACARTE\Inc\Traits\Singleton;
+use WP_Customize_Image_Control;
 
 class SALC_THEME{
 	use Singleton;
@@ -30,6 +31,13 @@ class SALC_THEME{
 		 * Actions.
 		 */
 		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
+		add_action( 'customize_register', [$this, 'theme_customizer_options'] );
+		
+		/**
+		 * Filters
+		 */
+		add_filter( 'body_class', [$this, 'theme_add_body_class'] );
+
 
 	}
 
@@ -119,4 +127,42 @@ class SALC_THEME{
 		 */
 		add_theme_support( 'editor-styles' );
     }
+
+	public function theme_customizer_options($wp_customize){
+
+		$wp_customize->add_setting( 'salc_header_logo', array(
+			'sanitize_callback' => 'esc_url_raw'
+		));
+		$wp_customize->add_setting( 'salc_footer_logo', array(
+			'sanitize_callback' => 'esc_url_raw'
+		));
+		
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'salc_logo_control', array(
+			'label' => 'Upload Header Logo',
+			'priority' => 20,
+			'section' => 'title_tagline',
+			'settings' => 'salc_header_logo',
+			'button_labels' => array(// All These labels are optional
+						'select' => 'Select Logo',
+						'remove' => 'Remove Logo',
+						'change' => 'Change Logo',
+						)
+		)));
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'salc_footer_logo_control', array(
+			'label' => 'Upload Footer Logo',
+			'priority' => 20,
+			'section' => 'title_tagline',
+			'settings' => 'salc_footer_logo',
+			'button_labels' => array(// All These labels are optional
+						'select' => 'Select Logo',
+						'remove' => 'Remove Logo',
+						'change' => 'Change Logo',
+						)
+		)));
+	}
+
+	public function theme_add_body_class($classes){
+		return array_merge( $classes, ['overflow-hidden'] );
+	}
 }

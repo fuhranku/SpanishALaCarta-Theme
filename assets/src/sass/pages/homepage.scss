@@ -1,0 +1,23 @@
+@import "/node_modules/include-media/dist/include-media";
+@import "../vendors-extensions/include-media";
+@import "../utils/imports";
+
+.site-banner{
+    height: 100vh;
+    min-height: 800px;
+}
+
+.home-banner-shape{
+    object-fit: fill;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 70vw;
+    height: 100%;
+    z-index: -1;
+}
+
+.home-banner-design{
+    width: 100%;
+    height: 100%;
+}
