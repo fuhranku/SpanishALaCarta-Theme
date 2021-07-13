@@ -21,3 +21,19 @@
     width: 100%;
     height: 100%;
 }
+
+@include media("<laptop-l"){
+    .home-banner-shape{
+        width: 82vw;
+    }
+}
+
+@include media("<laptop"){
+    .home-banner-shape{
+        width: 70vw;
+        height: 40%;
+    }
+    .home-banner-design{
+        max-width: 450px;
+    }
+}

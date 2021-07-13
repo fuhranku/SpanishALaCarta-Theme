@@ -1,7 +1,7 @@
 .header-menu{
     font-weight: 400;
     .navbar-nav{
-        .nav-link{
+        .nav-item .nav-link{
             color: $white;
             transition: .4s all ease-in-out;
             &:hover,&:active{
@@ -36,3 +36,34 @@
     z-index: 1;
 }
 
+.header-navbar-toggler{
+    height: fit-content;
+    padding: .7rem 0.7rem;
+    align-self: center;
+    background: white;
+    border: 2px solid white;
+}
+
+@include media("<laptop"){
+    #headerNavbar.show{
+        background: $secondary;
+    }
+    .menu-container{
+        background: $secondary;
+    }
+    #headerNavbar{
+        padding: 1.5rem;
+        .header-menu{
+            .navbar-nav{
+                gap: .7rem;
+            }
+        }
+    }
+}
+
+@include media("<=mobile-l"){
+    .navbar-brand img{
+        width: 88%;
+        height: auto;
+    }
+}

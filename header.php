@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php language_attributes(); ?>">
+<html lang="<?php language_attributes(); ?>" class="mt-0">
 <head>
     <meta charset="<?php bloginfo('charset')?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

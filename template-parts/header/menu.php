@@ -60,7 +60,7 @@ $header_menu = wp_get_nav_menu_items($header_menu_id);
             </ul>
         <?php endif; ?>
     </nav>
-    <nav class="header-menu ms-4">
+    <nav class="header-menu ms-0 ms-lg-4 mt-4 mt-lg-0">
         <a href="#" class="btn btn-header">free class</a>
     </nav>
 </div>
