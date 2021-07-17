@@ -5,8 +5,12 @@
  * @package Hammersportmarketing
  */
 get_header();
- ?>
 
- <div style="height:70vh;"><?php pll_e( "Frontpage" )?></div>
+/** Content */
 
- <?php get_footer(); ?>
+get_template_part('template-parts/homepage/why-us', 'Homepage Section');
+get_template_part('template-parts/homepage/how-to', 'Homepage Section');
+get_template_part('template-parts/homepage/nivelation-test', 'Homepage Section');
+get_template_part('template-parts/homepage/storytelling', 'Homepage Section');
+
+get_footer();

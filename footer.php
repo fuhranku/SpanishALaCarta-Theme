@@ -4,9 +4,10 @@
  * 
  * @package Hammersportmarketing
  */
+    $logo_id = attachment_url_to_postid(get_theme_mod('salc_footer_logo'));
 ?>
     <div id="site-preloader">
-        <img src="<?php echo get_theme_mod('salc_footer_logo');?>" alt="" width=300 height=100>
+        <?php theme_lazy_image($logo_id,"site-logo","",300,100); ?>
         <img src="<?php echo THEME_BUILD_IMG_URI . '/preloader.svg' ?>" width="50" height="50"></img>
     </div>
         <Footer>

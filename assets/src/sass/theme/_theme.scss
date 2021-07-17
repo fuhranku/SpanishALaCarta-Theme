@@ -1,5 +1,5 @@
 body {
-    color: $black;
+    color: $secondary;
     line-height: normal;
     margin: 0;
     font-family: $body-font;
@@ -34,6 +34,14 @@ a{
   flex-direction: column;
   &.page-loaded{
     animation: fadeOut .8s forwards;
+  }
+}
+
+@include media("<laptop-l"){
+  #site-preloader .site-logo{
+    width: 50vw;
+    max-width: 300px;
+    height: auto;
   }
 }
 

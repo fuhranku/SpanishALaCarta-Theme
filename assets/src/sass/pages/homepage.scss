@@ -22,9 +22,63 @@
     height: 100%;
 }
 
+.nivelation-section-shape{
+    top: 0%;
+    left: 0%;
+    object-fit: fill;
+    object-position: bottom;
+}
+
+.btn-nivelation-test{
+    background: transparent;
+    border: 2px solid $white;
+    color: $white;
+    transition: .4s all ease-in-out;
+    &:hover,&:active{
+        background: $white;
+        color: $secondary !important;
+    }
+}
+
+.storytelling-item{
+    max-width: 320px;
+}
+
+.storytelling-shape{
+    position: absolute;
+    img{
+        object-fit: contain;
+    }
+    &.shape-1{
+        top: -20%;
+        left: 30%;
+        transform: translate(-50%,-50%);
+    }
+    &.shape-2{
+        top: 22%;
+        left: 79%;
+        transform: translate(-50%, -50%) rotate(-23deg) scale(.9);
+    }
+}
+
 @include media("<laptop-l"){
     .home-banner-shape{
         width: 82vw;
+    }
+    .nivelation-section-shape{
+        object-fit: cover;
+    }
+    .storytelling-shape{
+        &.shape-1{
+            top: -30%;
+            left: 40%;
+            transform: translate(-50%, -50%) rotate(15deg);
+        }
+        &.shape-2{
+            top: 13%;
+            left: 86%;
+            transform: translate(-50%, -50%) rotate(-33deg ) scale(0.9);
+        }
     }
 }
 

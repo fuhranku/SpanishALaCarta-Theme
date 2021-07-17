@@ -125,4 +125,48 @@ function hsm_pagination(){
 	];
 
 	printf( '<nav class="hsm-pagination">%s </nav>', wp_kses( paginate_links( $args ), $allowed_tags));
+	
+}
+
+function theme_lazy_image($id, $classes="",$alt="", $width=null, $height=null){
+    // Fetch the mime type and base64 value
+    $mimeType = get_post_mime_type($id);
+    //$base64 = get_post_meta($id, "base64")[0];
+    ob_start();
+	$img_url = wp_get_attachment_image_src($id, "tiny-lazy");
+	$img_alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
+    ?>
+    	<img 
+			class="<?php echo('lazyload blur-up '.$classes); ?>"
+			data-sizes="auto"
+			data-src="<?= $img_url[0]; ?>"
+			data-srcset="<?php echo wp_get_attachment_image_srcset($id, "full"); ?>"
+			alt="<?php echo $alt !== "" ? $alt : $img_alt?>"
+			<?php if ($width != null):?>
+				width=<?= $width?>
+			<?php endif;
+				if ($height !=null):
+			?>
+				height=<?= $height?>
+			<?php endif; ?>
+		>
+	<?php
+    echo ob_get_clean();
+}
+
+function theme_lazy_video($video_id,$poster_id = "", $classes=""){
+	ob_start();
+    ?>
+		<video 
+			class="<?php echo('lazyload '.$classes); ?>"
+			<?php if($poster_id !== "") : ?>
+			data-poster="<?php echo wp_get_attachment_url( $poster_id ); ?>" 
+			<?php endif; ?>
+			preload="none" 
+			controls
+		>
+			<source src="<?php echo wp_get_attachment_url( $video_id ); ?>" type=video/mp4>
+		</video>
+	<?php
+    echo ob_get_clean();
 }

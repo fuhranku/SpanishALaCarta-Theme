@@ -8,6 +8,18 @@
     }
 }
 
+.blur-up {
+-webkit-filter: blur(5px);
+filter: blur(5px);
+transition: filter 400ms, -webkit-filter 400ms;
+}
+  
+.blur-up.lazyloaded {
+-webkit-filter: blur(0);
+filter: blur(0);
+}
+  
+
 .w-fit-content{
     width: fit-content;
 }
@@ -30,4 +42,20 @@
 
 .bg-blue{
     background-color: $secondary;
+}
+
+.shadow-red{
+    box-shadow: 10px 17px $primary;
+}
+
+.z-n1{
+    z-index: -1;
+}
+
+.z-0{
+    z-index: 0;
+}
+
+.z-1{
+    z-index: 1;
 }

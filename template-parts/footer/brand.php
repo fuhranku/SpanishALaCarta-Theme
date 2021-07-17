@@ -4,11 +4,12 @@
  * 
  * @author FrankPonte
  */
+    $logo_id = attachment_url_to_postid(get_theme_mod('salc_footer_logo'));
  ?>
 
 <div class="col-12 col-lg-6 d-flex flex-column align-items-center px-0 px-lg-5">
-    <a href="/" class="mb-4">
-        <img src="<?php echo get_theme_mod('salc_footer_logo');?>" alt="" width=200 height=67>
+    <a href="<?php pll_home_url();?>" class="mb-4">
+        <?php theme_lazy_image($logo_id,"","",200,67); ?>
     </a>
     <p class="text-white text-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam. 
