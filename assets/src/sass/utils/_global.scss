@@ -48,8 +48,25 @@ filter: blur(0);
     box-shadow: 10px 17px $primary;
 }
 
+.vertical-separator{
+    top: 50%;
+    width: 1px;
+    background: #1A2430;
+    transform: translate(-50%,-50%);
+    &.right{
+        left:100%;
+    }
+}
+
+.theme-list{
+    list-style-type: none;
+}
+
 .z-n1{
     z-index: -1;
+}
+.z-n2{
+    z-index: -2;
 }
 
 .z-0{

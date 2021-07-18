@@ -1,6 +1,6 @@
 <?php
     /**
-     * Nivelation test section
+     * Storytelling section
      * @author FrankPonte
      */
 ?>
@@ -23,7 +23,7 @@
             <div class="storytelling-shapes-container position-relative d-flex flex-row flex-lg-column flex-wrap flex-lg-nowrap">
                 <div class="storytelling-item d-flex flex-column align-items-center justify-content-center me-lg-auto mx-auto mx-lg-0 w-100 w-md-50 p-4 p-lg-0">
                     <?php theme_lazy_image(160,"","Professionals icon",100,100); ?>
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mt-3">
                         Profesionales
                     </h3>
                     <div class="text-center">
@@ -37,7 +37,7 @@
                         <?php theme_lazy_image(157,"","",105,137); ?>
                     </div>
                     <?php theme_lazy_image(159,"","Students icon",100,100); ?>
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mt-3">
                         Estudiantes
                     </h3>
                     <div class="text-center">
@@ -51,7 +51,7 @@
                         <?php theme_lazy_image(156,"","",105,137); ?>
                     </div>
                     <?php theme_lazy_image(158,"","Goals icon",100,100); ?>
-                    <h3 class="fw-bold">
+                    <h3 class="fw-bold mt-3">
                         Metas
                     </h3>
                     <div class="text-center">
