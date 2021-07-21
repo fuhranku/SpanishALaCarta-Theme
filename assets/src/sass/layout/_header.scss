@@ -44,6 +44,13 @@
     border: 2px solid white;
 }
 
+.common-nav{
+    background: $white;
+    div.container-lg .menu-container #headerNavbar .header-menu a{
+        color: $secondary;
+    }
+}
+
 @include media("<laptop"){
     #headerNavbar.show{
         background: $secondary;

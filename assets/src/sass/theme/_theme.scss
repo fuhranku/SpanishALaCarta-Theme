@@ -37,11 +37,65 @@ a{
   }
 }
 
+.dropdown-toggle{
+  &::after{
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: .6rem;
+    content: "\f107";
+    transform: rotate(0);
+    transform-origin: .3rem 40%;
+    transition: .25s transform ease;
+    border: none;
+  }
+  &.show{
+    &::after{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.dropdown-item{
+  color: $secondary !important;
+  font-weight: normal;
+  transition: .4s all ease-in-out;
+  &:hover{
+    color: $secondary !important;
+    font-weight: bold;
+  }
+}
+
+.form-input{
+  border: none;
+  border-bottom: 2px solid #C4C4C4;
+  color: $secondary;
+  padding: .6rem;
+  &:focus-visible{
+    outline: transparent;
+  }
+}
+
+.form-textarea{
+  border: 2px solid #C4C4C4;
+  color: $secondary;
+  padding: .6rem;
+  resize: none;
+  &:focus-visible{
+    outline: transparent;
+  }
+}
+
 @include media("<laptop-l"){
   #site-preloader .site-logo{
     width: 50vw;
     max-width: 300px;
     height: auto;
+  }
+  .section-shape{
+    object-fit: cover;
   }
 }
 

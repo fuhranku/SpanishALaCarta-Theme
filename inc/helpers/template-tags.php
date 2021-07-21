@@ -170,3 +170,37 @@ function theme_lazy_video($video_id,$poster_id = "", $classes=""){
 	<?php
     echo ob_get_clean();
 }
+
+function get_string_between($string, $start, $end){
+    $string = ' ' . $string;
+    $ini = strpos($string, $start);
+    if ($ini == 0) return '';
+    $ini += strlen($start);
+    $len = strpos($string, $end, $ini) - $ini;
+    return substr($string, $ini, $len);
+}
+
+function get_current_template_name(){
+	return strtolower(get_string_between(get_page_template_slug(), "page.", ".php"));
+}
+
+function theme_get_page_banner(){
+	if(is_front_page()){
+		return get_template_part('template-parts/header/banners/home-banner', 'frontpage');
+	}else{
+		$page_slug = get_current_template_name() . "-";
+		$ACF_banner_group_slug = $page_slug."banner";
+		$arguments = [];
+		error_log($ACF_banner_group_slug);
+		error_log("HEY");
+		if ( get_field($ACF_banner_group_slug) !== null){
+			$acf_group = get_field($ACF_banner_group_slug);
+			$arguments = [
+				"image_id" => array_key_exists("image",$acf_group) ? $acf_group["image"] : 0,
+				"title" => array_key_exists("title",$acf_group) ? $acf_group["title"] : "No title has been set on ACF",
+				"subtitle" => array_key_exists("subtitle",$acf_group) ? $acf_group["subtitle"] : "No subtitle has been set on ACF",
+			];
+		}
+		return get_template_part('template-parts/header/banners/common-banner', 'All pages except homepage',$arguments);
+	}
+}

@@ -12,10 +12,10 @@
             <h3 class="fw-bold text-center text-lg-start">
                 Preguntas <span class="text-red">frecuentes</span>
             </h3>
-            <?php get_template_part("template-parts/homepage/contact-and-faq/faq", "Contact & FAQ component"); ?>
-            <?php get_template_part("template-parts/homepage/contact-and-faq/faq", "Contact & FAQ component"); ?>
-            <?php get_template_part("template-parts/homepage/contact-and-faq/faq", "Contact & FAQ component"); ?>
-            <?php get_template_part("template-parts/homepage/contact-and-faq/faq", "Contact & FAQ component"); ?>
+            <?php get_template_part("template-parts/components/common/contact-and-faq/faq", "Contact & FAQ component"); ?>
+            <?php get_template_part("template-parts/components/common/contact-and-faq/faq", "Contact & FAQ component"); ?>
+            <?php get_template_part("template-parts/components/common/contact-and-faq/faq", "Contact & FAQ component"); ?>
+            <?php get_template_part("template-parts/components/common/contact-and-faq/faq", "Contact & FAQ component"); ?>
         </div>
         <div class="col-12 col-lg-6 d-flex flex-column justify-content-start align-items-center px-5">
             <h3 class="mb-4 text-center fw-bold">

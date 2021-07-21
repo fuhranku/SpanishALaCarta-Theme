@@ -36,11 +36,30 @@
             filemtime(THEME_BUILD_CSS_DIR_PATH . '/homepage.bundle.css'),
             'all'
         );
+        wp_register_style(
+            'about-us-bundle',
+            THEME_BUILD_CSS_URI . '/about_us.bundle.css',
+            [],
+            filemtime(THEME_BUILD_CSS_DIR_PATH . '/about_us.bundle.css'),
+            'all'
+        );
+        wp_register_style(
+            'contact-us-bundle',
+            THEME_BUILD_CSS_URI . '/contact_us.bundle.css',
+            [],
+            filemtime(THEME_BUILD_CSS_DIR_PATH . '/contact_us.bundle.css'),
+            'all'
+        );
+
         // Enqueue Styles
         wp_enqueue_style( 'vendor-bundle' );
         wp_enqueue_style( 'main-bundle' );
         if( is_front_page() ){
             wp_enqueue_style('homepage-bundle');
+        }else if ( get_current_template_name() === "about-us" ){
+            wp_enqueue_style('about-us-bundle');
+        }else if ( get_current_template_name() === "contact-us" ){
+            wp_enqueue_style('contact-us-bundle');
         }
     }
 
@@ -59,10 +78,28 @@
             filemtime(THEME_BUILD_JS_DIR_PATH . '/homepage.bundle.js'),
             true
         );
+        wp_register_script(
+            'about-us-bundle',
+            THEME_BUILD_JS_URI . '/about_us.bundle.js',
+            ['jquery'],
+            filemtime(THEME_BUILD_JS_DIR_PATH . '/about_us.bundle.js'),
+            true
+        );
+        wp_register_script(
+            'contact-us-bundle',
+            THEME_BUILD_JS_URI . '/contact_us.bundle.js',
+            ['jquery'],
+            filemtime(THEME_BUILD_JS_DIR_PATH . '/contact_us.bundle.js'),
+            true
+        );
         wp_enqueue_script('vendor-bundle');        
         wp_enqueue_script('main-bundle');
         if( is_front_page() ){
             wp_enqueue_script('homepage-bundle');
+        }else if ( get_current_template_name() === "about-us" ){
+            wp_enqueue_script('about-us-bundle');
+        }else if ( get_current_template_name() === "contact-us" ){
+            wp_enqueue_script('contact-us-bundle');
         }
     }
  }

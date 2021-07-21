@@ -7,6 +7,7 @@
 $menu_class = \SPANISHALACARTE\Inc\Menus::get_instance();
 $header_menu_id = $menu_class->get_menu_id('salc-header-menu');
 $header_menu = wp_get_nav_menu_items($header_menu_id);
+$home_banner = is_front_page();
 ?>
 
 <div class="collapse navbar-collapse justify-content-end" id="headerNavbar">
@@ -61,6 +62,6 @@ $header_menu = wp_get_nav_menu_items($header_menu_id);
         <?php endif; ?>
     </nav>
     <nav class="header-menu ms-0 ms-lg-4 mt-4 mt-lg-0">
-        <a href="#" class="btn btn-header">free class</a>
+        <a href="#" class="btn btn-header<?php echo !$home_banner ? '-alt':''; ?>">free class</a>
     </nav>
 </div>
