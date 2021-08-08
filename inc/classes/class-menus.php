@@ -56,10 +56,8 @@
     }
 
     public function get_active_menu_item($menu_item_id){
-        if (get_the_ID() == $menu_item_id)
+        if (get_queried_object_id() == $menu_item_id)
             return 'active';
-        // if (get_option( 'page_on_front' ) == $menu_item_id)
-        //     return 'active';
         return '';
     }
 

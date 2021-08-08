@@ -31,7 +31,7 @@
             'after' => '</div>'
         ]);
     }else{
-        hsm_the_excerpt(10);
+        theme_the_excerpt(10);
         echo hsm_excerpt_more();
     }
 

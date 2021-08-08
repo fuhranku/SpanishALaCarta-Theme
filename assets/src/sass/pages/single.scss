@@ -1,0 +1,49 @@
+@import "/node_modules/include-media/dist/include-media";
+@import "../vendors-extensions/include-media";
+@import "../utils/imports";
+
+.post-thumbnail{
+    margin-top: -12rem;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.related-posts{
+    .inner-container{
+        overflow: hidden;
+    }
+}
+.related-post{
+    width: 320px;
+    img{
+        max-height: 221px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+}
+
+.newsletter{
+    border-radius: 30px;
+}
+
+.comment{
+    .avatar{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #C4C4C4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+}
+
+@include media("<=mobile-l"){
+    .related-post{
+        width: 50vw;
+    }
+    .newsletter{
+        border-radius: 0;
+    }
+}

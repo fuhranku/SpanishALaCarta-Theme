@@ -10,7 +10,7 @@ $header_menu = wp_get_nav_menu_items($header_menu_id);
 $home_banner = is_front_page();
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light position-absolute w-100 h-auto <?php echo !$home_banner ? 'common-nav' : '';?>" id="mainNavbar">
+<nav class="navbar navbar-expand-lg navbar-light position-absolute w-100 h-auto py-0 <?php echo !$home_banner ? 'common-nav' : '';?>" id="mainNavbar">
   <div class="container-lg px-0 px-lg-4">
     <div class="inner-container d-flex w-100 w-lg-auto px-5 px-lg-0 ">
       <!-- Logo  -->

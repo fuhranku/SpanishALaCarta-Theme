@@ -23,6 +23,14 @@ module.exports = {
         import: JS_DIR + "/pages/contact-us.js",
         dependOn: ["main", "vendor"]
       },
+      blog: {
+        import: JS_DIR + "/pages/blog.js",
+        dependOn: ["main", "vendor"]
+      },
+      single: {
+        import: JS_DIR + "/pages/single.js",
+        dependOn: ["main", "vendor"]
+      },
       utilsScript: "/node_modules/intl-tel-input/build/js/utils.js"
     },
     plugins: [

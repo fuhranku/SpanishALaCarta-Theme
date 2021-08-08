@@ -11,9 +11,6 @@
     <a href="<?php pll_home_url();?>" class="mb-4">
         <?php theme_lazy_image($logo_id,"","",200,67); ?>
     </a>
-    <p class="text-white text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam. 
-    </p>
     <ul class="footer-list list-group w-100 mt-3 w-xl-75">
         <li class="list-group-item flex-wrap justify-content-center justify-content-lg-start small py-3 px-5">
             <i class="fas fa-envelope footer-icon me-3"></i>

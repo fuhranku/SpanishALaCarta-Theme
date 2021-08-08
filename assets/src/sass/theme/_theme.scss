@@ -88,6 +88,33 @@ a{
   }
 }
 
+form.theme-form{
+  display: flex;
+  align-items: center;
+  input[type=text], input[type=email]{
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+      height: 40px;
+      padding: .5rem .9rem;
+      border: 2px solid #D8D9D8;
+      flex-grow: 100;
+      &:focus-visible{
+          outline: none;
+      }
+      &::placeholder{
+          color: #1a24304b;
+      }
+  }
+  button[type=submit]{
+      border-radius: 60px;
+      color: $white;
+      background: $primary;
+      border: none;
+      padding: .5rem .9rem;
+      margin-left: -17px;
+  }
+}
+
 @include media("<laptop-l"){
   #site-preloader .site-logo{
     width: 50vw;
@@ -96,6 +123,18 @@ a{
   }
   .section-shape{
     object-fit: cover;
+  }
+}
+
+@include media("<=mobile-l"){
+  form.theme-form{
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 1rem;
+    input[type=text], input[type=email]{
+      border-radius: 60px;
+    }
   }
 }
 

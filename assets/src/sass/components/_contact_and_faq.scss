@@ -37,20 +37,4 @@ details.faq-details{
   100%  {opacity: 1; transform: translateX(0)}
 }
 
-.social-link{
-    display: flex;
-    width: 42px;
-    height: 42px;
-    background: #3D70B1;
-    color: $white;
-    font-size: 23px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px solid #3D70B1;
-    transition: .4s all ease-in-out;
-    &:hover,&:active{
-        background-color: transparent;
-        color: #3D70B1 !important;
-    }
-}
+

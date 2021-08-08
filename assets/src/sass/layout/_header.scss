@@ -66,6 +66,11 @@
             }
         }
     }
+    .common-nav{
+        div.container-lg .menu-container #headerNavbar .header-menu a{
+            color: $white;
+        }
+    }
 }
 
 @include media("<=mobile-l"){

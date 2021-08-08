@@ -8,58 +8,18 @@
  */
 get_header();
 ?>
-
-<div class="primary">
-    <main id="main" class="site-main" role="main">
-        <?php 
-            if(have_posts()):
-                ?>
-                    <div class="container">
-
-                    <?php 
-                    if(is_home() && !is_front_page()):
-                        ?>
-                        <header>
-                            <h1><?php single_post_title();?></h1>
-                        </header>
-                        <?php 
-                    endif;
-                    ?>
-                        <?php
-						$index         = 0;
-						$no_of_columns = 3;
-
-						while ( have_posts() ) : the_post();
-
-							if ( 0 === $index % $no_of_columns ) {
-								?>
-								<div class="">
-								<?php
-							}
-
-							get_template_part( 'template-parts/content' );
-
-							$index ++;
-
-							if ( 0 !== $index && 0 === $index % $no_of_columns ) {
-								?>
-								</div>
-								<?php
-							}
-
-						endwhile;
-						?>
-                    </div>
-                <?php
-            else: 
-                get_template_part( 'template-parts/content-none' );
-            endif;
-
-            hsm_pagination();
-
+    <section id="posts-page" class="container my-5">
+        <?php
+            if(is_home() || is_category() || is_search()){
+                get_template_part( "template-parts/blog/header","Blog component"); 
+            }
         ?>
-    </main>
-</div>
-
+        
+        <div class="blog-list d-flex flex-column align-items-center">
+            <?php get_template_part( "template-parts/blog/content-title","Blog component"); ?>
+            <?php get_template_part( "template-parts/blog/content","Blog component"); ?>
+            <?php get_template_part( "template-parts/blog/pagination","Blog component"); ?>
+        </div>
+    </section>
 <?php 
 get_footer();

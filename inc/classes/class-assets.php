@@ -50,16 +50,34 @@
             filemtime(THEME_BUILD_CSS_DIR_PATH . '/contact_us.bundle.css'),
             'all'
         );
+        wp_register_style(
+            'blog-bundle',
+            THEME_BUILD_CSS_URI . '/blog.bundle.css',
+            [],
+            filemtime(THEME_BUILD_CSS_DIR_PATH . '/blog.bundle.css'),
+            'all'
+        );
+        wp_register_style(
+            'single-bundle',
+            THEME_BUILD_CSS_URI . '/single.bundle.css',
+            [],
+            filemtime(THEME_BUILD_CSS_DIR_PATH . '/single.bundle.css'),
+            'all'
+        );
 
         // Enqueue Styles
         wp_enqueue_style( 'vendor-bundle' );
         wp_enqueue_style( 'main-bundle' );
         if( is_front_page() ){
             wp_enqueue_style('homepage-bundle');
+        }else if(is_home() || is_author() || is_category() || is_search()){
+            wp_enqueue_style('blog-bundle');
         }else if ( get_current_template_name() === "about-us" ){
             wp_enqueue_style('about-us-bundle');
         }else if ( get_current_template_name() === "contact-us" ){
             wp_enqueue_style('contact-us-bundle');
+        }else if(is_single()){
+            wp_enqueue_style('single-bundle');
         }
     }
 
@@ -92,14 +110,32 @@
             filemtime(THEME_BUILD_JS_DIR_PATH . '/contact_us.bundle.js'),
             true
         );
+        wp_register_script(
+            'blog-bundle',
+            THEME_BUILD_JS_URI . '/blog.bundle.js',
+            ['jquery'],
+            filemtime(THEME_BUILD_JS_DIR_PATH . '/blog.bundle.js'),
+            true
+        );
+        wp_register_script(
+            'single-bundle',
+            THEME_BUILD_JS_URI . '/single.bundle.js',
+            ['jquery'],
+            filemtime(THEME_BUILD_JS_DIR_PATH . '/single.bundle.js'),
+            true
+        );
         wp_enqueue_script('vendor-bundle');        
         wp_enqueue_script('main-bundle');
         if( is_front_page() ){
             wp_enqueue_script('homepage-bundle');
+        }else if(is_home() || is_author() || is_category() || is_search()){
+            wp_enqueue_script('blog-bundle');
         }else if ( get_current_template_name() === "about-us" ){
             wp_enqueue_script('about-us-bundle');
         }else if ( get_current_template_name() === "contact-us" ){
             wp_enqueue_script('contact-us-bundle');
+        }else if (is_single()){
+            wp_enqueue_script('single-bundle');
         }
     }
  }

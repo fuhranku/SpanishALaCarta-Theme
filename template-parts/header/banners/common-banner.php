@@ -1,11 +1,18 @@
 <?php
 /**
  * Generic banner
- * @author Hammersportmarketing
+ * @author Frank Ponte
  */
 $image_id = array_key_exists("image_id",$args) ? $args['image_id']: 0;
-$title = array_key_exists("title",$args) ? $args['title']: "Title has not been set on ACF";
-$subtitle = array_key_exists("subtitle",$args) ? $args['subtitle']: "Subtitle has not been set on ACF";
+$title = array_key_exists("title",$args) ? $args['title']: "";
+$subtitle = array_key_exists("subtitle",$args) ? $args['subtitle']: "";
+if(is_category()){
+    $title = pll__("Category")." - ".pll__("Archive");
+}else if (is_author()){
+    $title = pll__("Author")." - ".pll__("Archive");
+}else if (is_search()){
+    $title = pll__("Search")." - ".pll__("Archive");
+}
 ?>
 
 <section class="common-banner position-relative d-flex flex-column justify-content-center align-items-center px-5 pb-5 z-n1">
