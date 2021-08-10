@@ -90,7 +90,7 @@ $contact_form = $content["contact_form"];
                     </div>
                     <div class="col-12 d-flex flex-column">
                         <label for="messageInput" class="form-label fs-5 fw-bold">
-                            <?php esc_html_e($contact_form["email_field"]["label"]); ?>
+                            <?php esc_html_e($contact_form["message_field"]["label"]); ?>
                         </label>
                         <textarea name="messageInput" rows="5" placeholder="<?php esc_attr_e($contact_form["message_field"]["placeholder"]); ?>" class="form-textarea"></textarea>
                         <ul class="error-list mt-3 small text-danger d-none">
