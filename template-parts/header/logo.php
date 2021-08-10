@@ -8,6 +8,6 @@
  ?>
 
 
-<a class="navbar-brand" href="<?php pll_home_url();?>">
+<a class="navbar-brand" href="<?php echo pll_home_url();?>">
     <?php theme_lazy_image($logo_id,"","",200,67); ?>
 </a>

@@ -3,11 +3,13 @@
      * How to buy a course section
      * @author FrankPonte
      */
+    $content = get_field("how_to_section");
+    $button = $content["button"];
 ?>
 
 <section id="how-to-buy-a-course" class="container d-flex flex-column align-items-center justify-content-center my-5 py-5 px-5 px-lg-0">
     <h2 class="text-center fw-bold mb-5">
-        ¿Cómo adquirir un <span class="text-red">curso?</span> 
+        <?php echo $content["title"]; ?>
     </h2>
     <div class="d-none d-lg-block my-5 w-100">
         <?php theme_lazy_image(144,"w-100 h-auto d-none d-lg-block","",1589,354); ?>
@@ -28,7 +30,7 @@
             </div>
         </div>
     </div>
-    <a href="#" class="btn btn-primary mt-5">
-        Descubre los planes
+    <a href=" <?php echo esc_url($button["url"]); ?>" class="btn btn-primary mt-5">
+        <?php esc_html_e($button["text"]); ?>
     </a>
 </section>

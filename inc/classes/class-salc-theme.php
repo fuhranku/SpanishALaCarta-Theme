@@ -39,6 +39,7 @@ class SALC_THEME{
 		add_filter( 'body_class', [$this, 'theme_add_body_class'] );
 		add_filter( 'wp_generate_attachment_metadata', [$this, 'theme_generate_attachment_metadata'], 10, 2 );
 		add_filter( 'the_content', [$this, 'theme_filter_the_content_in_the_main_loop'] );
+		add_filter('excerpt_length', [$this, 'theme_excerpt_length']);
 
 	}
 
@@ -264,4 +265,11 @@ class SALC_THEME{
 	
 	   return $content;
    	}
+	
+	/**
+	 * Change excerpt length limit
+	 */
+	public function theme_excerpt_length($length){
+		return 135;
+	}
 }

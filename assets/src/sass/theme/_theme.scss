@@ -37,11 +37,104 @@ a{
   }
 }
 
+.dropdown-toggle{
+  &::after{
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: .6rem;
+    content: "\f107";
+    transform: rotate(0);
+    transform-origin: .3rem 40%;
+    transition: .25s transform ease;
+    border: none;
+  }
+  &.show{
+    &::after{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.dropdown-item{
+  color: $secondary !important;
+  font-weight: normal;
+  transition: .4s all ease-in-out;
+  &:hover{
+    color: $secondary !important;
+    font-weight: bold;
+  }
+}
+
+.form-input{
+  border: none;
+  border-bottom: 2px solid #C4C4C4;
+  color: $secondary;
+  padding: .6rem;
+  &:focus-visible{
+    outline: transparent;
+  }
+}
+
+.form-textarea{
+  border: 2px solid #C4C4C4;
+  color: $secondary;
+  padding: .6rem;
+  resize: none;
+  &:focus-visible{
+    outline: transparent;
+  }
+}
+
+form.theme-form{
+  display: flex;
+  align-items: center;
+  input[type=text], input[type=email]{
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+      height: 40px;
+      padding: .5rem .9rem;
+      border: 2px solid #D8D9D8;
+      flex-grow: 100;
+      &:focus-visible{
+          outline: none;
+      }
+      &::placeholder{
+          color: #1a24304b;
+      }
+  }
+  button[type=submit]{
+      border-radius: 60px;
+      color: $white;
+      background: $primary;
+      border: none;
+      padding: .5rem .9rem;
+      margin-left: -17px;
+  }
+}
+
 @include media("<laptop-l"){
   #site-preloader .site-logo{
     width: 50vw;
     max-width: 300px;
     height: auto;
+  }
+  .section-shape{
+    object-fit: cover;
+  }
+}
+
+@include media("<=mobile-l"){
+  form.theme-form{
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 1rem;
+    input[type=text], input[type=email]{
+      border-radius: 60px;
+    }
   }
 }
 

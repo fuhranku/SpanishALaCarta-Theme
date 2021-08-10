@@ -8,10 +8,10 @@
 
 <div class="col-3 px-5 d-none d-lg-block">
     <h4 class="mb-4 text-white">
-        Newsletter
+        <?php pll_e("footer newsletter title"); ?>
     </h4>
     <p class="text-white">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.
+        <?php pll_e("footer newsletter description"); ?>
     </p>
     <form action="" id="footer-newsletter-form">
         <input type="email" name="newsletterEmail" placeholder="johndoe@email.com">

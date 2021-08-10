@@ -1,0 +1,17 @@
+.common-banner{
+    min-height: 400px;
+    background: linear-gradient(91.5deg, #3D70B1 11.77%, #FF2243 136.6%);
+    padding-top: 93px;
+    .banner-img{
+        object-fit: cover;
+        top: 0%;
+        left: 0%;
+        opacity: .3;
+    }
+    .wave-shape{
+        top: 0%;
+        right: 0%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

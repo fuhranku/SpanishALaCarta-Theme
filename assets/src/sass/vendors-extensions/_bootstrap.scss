@@ -41,6 +41,19 @@
     }
 }
 
+.btn-header-alt{
+    background: transparent;
+    border: 2px solid $primary;
+    color: $primary !important;
+    transition: all .4s ease-in-out;
+    text-transform: capitalize;
+    &:hover,&:active{
+        background: $secondary;
+        border-color: $secondary;
+        color: $white !important;
+    }
+}
+
 @include media(">=1400px"){
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
         max-width: 1250px;

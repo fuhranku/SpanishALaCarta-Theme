@@ -44,6 +44,7 @@ if (!defined('THEME_BUILD_CSS_DIR_PATH')){
 
 require_once THEME_DIR_PATH . '/inc/helpers/autoloader.php';
 require_once THEME_DIR_PATH . '/inc/helpers/template-tags.php';
+require_once THEME_DIR_PATH . '/inc/helpers/strings-register.php';
 
 function salc_get_theme_instance(){
     \SPANISHALACARTE\Inc\SALC_THEME::get_instance();

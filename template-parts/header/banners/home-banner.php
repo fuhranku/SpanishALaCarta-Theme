@@ -4,6 +4,7 @@
      * @author FrankPonte
      */
     $content = get_field("banner");
+    $button = $content["button"];
 ?>
 
 <section id="home-banner" class="position-relative site-banner d-flex align-items-center justify-content-center container-fluid">
@@ -14,16 +15,19 @@
                 <h1 class="text-blue fw-bold text-center text-lg-start">
                     <?php echo $content["title"];?>
                 </h1>
+                <h2 class="text-blue text-center text-lg-start">
+                    <?php esc_html_e($content["subtitle"]);?>
+                </h2>
                 <p class="fs-5 mb-5 mt-3 text-center text-lg-start">
-                    Clases en vivo con una profesora certificada, especializada en la didáctica del español como lengua extranjera.
+                    <?php esc_html_e($content["description"]);?>
                 </p>
-                <a href="#" class="btn btn-primary w-fit-content">
-                    Clase gratis
+                <a href="<?php echo esc_url($button["url"]); ?>" class="btn btn-primary w-fit-content" target="_blank">
+                    <?php esc_html_e($button["text"]); ?>
                     <i class="fas fa-angle-right ms-3"></i>    
                 </a>
             </div>
             <div class="col-12 col-lg-6 p-5 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
-                <?php theme_lazy_image(141,"home-banner-design","",756,679); ?>
+                <?php theme_lazy_image($content["image"],"home-banner-design","",756,679); ?>
             </div>
         </div>
     </div>
