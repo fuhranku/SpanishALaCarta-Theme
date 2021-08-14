@@ -3,7 +3,7 @@
 /**
  * Searchform component
  * 
- * @package HammersportMarketing
+ * @author Frank Ponte
  * 
  */
 ?>

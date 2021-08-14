@@ -19,3 +19,22 @@ pll_register_string("theme", "Search", "Spanisch a la carte Theme");
 pll_register_string("theme", "Archive", "Spanisch a la carte Theme");
 pll_register_string("theme", "results_found", "Spanisch a la carte Theme");
 pll_register_string("theme", "no_match_text", "Spanisch a la carte Theme");
+pll_register_string("theme", "read_more", "Spanisch a la carte Theme");
+pll_register_string("theme", "subscribe", "Spanisch a la carte Theme");
+pll_register_string("theme", "name", "Spanisch a la carte Theme");
+pll_register_string("theme", "name_placeholder", "Spanisch a la carte Theme");
+pll_register_string("theme", "email", "Spanisch a la carte Theme");
+pll_register_string("theme", "email_placeholder", "Spanisch a la carte Theme");
+pll_register_string("theme", "share_comment", "Spanisch a la carte Theme");
+pll_register_string("theme", "share_comment_placeholder", "Spanisch a la carte Theme");
+pll_register_string("theme", "post_comment", "Spanisch a la carte Theme");
+
+// Single post strings registration
+pll_register_string("Single Page", "go_to_blog_btn", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "share_post_text", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "related_posts", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "newsletter_form_title", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "newsletter_form_description", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "comments", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "write_comment", "Spanisch a la carte Theme");
+pll_register_string("Single Page", "write_comment_description", "Spanisch a la carte Theme");

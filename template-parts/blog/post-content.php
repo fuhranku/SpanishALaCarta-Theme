@@ -50,7 +50,7 @@ $author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
                 <i class="fas fa-angle-right ms-3"></i>
             </a>',
             get_the_permalink(),
-            "Leer más"
+            pll__("read_more")
         );
     ?>
 </div>
