@@ -3,7 +3,7 @@
 /**
  * Main Template file
  * 
- * @package HammersportMarketing
+ * @author Frank Ponte
  * 
  */
 get_header();
