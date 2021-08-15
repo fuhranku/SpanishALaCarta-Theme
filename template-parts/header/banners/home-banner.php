@@ -8,7 +8,7 @@
 ?>
 
 <section id="home-banner" class="position-relative site-banner d-flex align-items-center justify-content-center container-fluid">
-    <?php theme_lazy_image(142,"home-banner-shape","",756,679); ?>
+    <?php theme_lazy_image(4081,"home-banner-shape","",756,679); ?>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start pe-5 ps-5 ps-lg-0 order-1 order-lg-0">
