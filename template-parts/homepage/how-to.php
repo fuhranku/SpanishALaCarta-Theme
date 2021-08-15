@@ -12,21 +12,21 @@
         <?php echo $content["title"]; ?>
     </h2>
     <div class="d-none d-lg-block my-5 w-100">
-        <?php theme_lazy_image(144,"w-100 h-auto d-none d-lg-block","",1589,354); ?>
+        <?php theme_lazy_image(1692,"w-100 h-auto d-none d-lg-block","",1589,354); ?>
     </div>
     <div class="d-block d-lg-none w-100 w-md-75 mx-auto my-4">
         <div class="row gx-5 gy-4">
             <div class="col-6">
-                <?php theme_lazy_image(151,"w-100 h-auto","",130,102); ?>
+                <?php theme_lazy_image(1691,"w-100 h-auto","",130,102); ?>
             </div>
             <div class="col-6">
-                <?php theme_lazy_image(150,"w-100 h-auto","",130,102); ?>
+                <?php theme_lazy_image(1690,"w-100 h-auto","",130,102); ?>
             </div>
             <div class="col-6">
-                <?php theme_lazy_image(149,"w-100 h-auto","",130,102); ?>
+                <?php theme_lazy_image(1689,"w-100 h-auto","",130,102); ?>
             </div>
             <div class="col-6">
-                <?php theme_lazy_image(152,"w-100 h-auto","",130,102); ?>
+                <?php theme_lazy_image(1688,"w-100 h-auto","",130,102); ?>
             </div>
         </div>
     </div>

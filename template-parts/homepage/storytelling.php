@@ -38,7 +38,7 @@
                 <?php $item_2 = $content["items"]["item_2"]; ?>
                 <div class="storytelling-item d-flex flex-column align-items-center justify-content-center ms-lg-auto mx-auto mx-lg-0 my-0 my-lg-4 position-relative w-100 w-md-50 p-4 p-lg-0">
                     <div class="storytelling-shape shape-1 d-none d-lg-block">
-                        <?php theme_lazy_image(157,"","",105,137); ?>
+                        <?php theme_lazy_image(1682,"","",105,137); ?>
                     </div>
                     <?php theme_lazy_image($item_2["image"],"","Students icon",100,100); ?>
                     <h3 class="fw-bold mt-3">
@@ -53,7 +53,7 @@
                 <?php $item_3 = $content["items"]["item_3"]; ?>
                 <div class="storytelling-item d-flex flex-column align-items-center justify-content-center mx-auto mx-lg-0 me-lg-auto position-relative w-100 w-md-50 p-4 p-lg-0">
                     <div class="storytelling-shape shape-2 d-none d-lg-block">
-                        <?php theme_lazy_image(156,"","",105,137); ?>
+                        <?php theme_lazy_image(1681,"","",105,137); ?>
                     </div>
                     <?php theme_lazy_image($item_3["image"],"","Goals icon",100,100); ?>
                     <h3 class="fw-bold mt-3">
