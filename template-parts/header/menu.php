@@ -36,6 +36,7 @@ $home_banner = is_front_page();
                             <li class="nav-item px-2 dropdown">
                                 <a class="nav-link dropdown-toggle" href="<?php echo esc_url($menu_item->url); ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php echo esc_html($menu_item->title); ?>
+                                    <i class="fas fa-angle-down arrow-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <?php
