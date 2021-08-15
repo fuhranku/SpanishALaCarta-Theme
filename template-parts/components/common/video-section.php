@@ -16,7 +16,7 @@
         </p>
     </div>
     <div class="container-fluid px-0 position-relative my-5">
-        <?php theme_lazy_image(4073,"w-100 h-100 section-shape position-absolute z-n1","",1920,438); ?>
+        <?php theme_lazy_image(1680,"w-100 h-100 section-shape position-absolute z-n1","",1920,438); ?>
         <div class="container d-flex justify-content-center align-items-center">
             <div class="ratio ratio-16x9 w-100 w-lg-75">
                 <?php theme_lazy_video($content["video"],"", "rounded"); ?>

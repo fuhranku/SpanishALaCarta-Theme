@@ -10,7 +10,7 @@ $empty_star = '<i class="far fa-star"></i>';
 ?>
 
 <div class="swiper-slide testimonial p-5 text-white position-relative">
-    <?php theme_lazy_image(162, "testimony-quote position-absolute", "Quote icon", 80, 80); ?>
+    <?php theme_lazy_image(1679, "testimony-quote position-absolute", "Quote icon", 80, 80); ?>
     <div class="rating d-inline-flex mb-4">
         <?php for ($i = 0; $i < $rating; $i++) {
             echo $filled_star;
