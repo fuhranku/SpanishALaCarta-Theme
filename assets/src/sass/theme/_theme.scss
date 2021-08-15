@@ -39,20 +39,17 @@ a{
 
 .dropdown-toggle{
   &::after{
-    display: inline-block;
+    content: "";
+    display: none;
+  }
+  .arrow-down {
     margin-left: 0.255em;
-    vertical-align: 0.255em;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: .6rem;
-    content: "\f107";
     transform: rotate(0);
-    transform-origin: .3rem 40%;
-    transition: .25s transform ease;
-    border: none;
+    transform-origin: 0.3rem 40%;
+    transition: 0.25s transform ease;
   }
   &.show{
-    &::after{
+    .arrow-down{
       transform: rotate(180deg);
     }
   }

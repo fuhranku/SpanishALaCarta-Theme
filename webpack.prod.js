@@ -35,7 +35,7 @@ module.exports = merge(common, {
                     {
                       loader: 'file-loader',
                       options: {
-                        publicPath: "https://www.spanishalacarte.com/wp-content/themes/SpanishALaCarta/assets/build/images",
+                        publicPath: "http://localhost/SpanishALaCarta/wp-content/themes/SpanishALaCarta/assets/build/images",
                         outputPath: "/images",
                         name: '[name].[ext]',
                       }
@@ -53,8 +53,8 @@ module.exports = merge(common, {
             jQuery: 'jquery'
         }),
         new webpack.EnvironmentPlugin({
-            URL: "https://www.spanishalacarte.com/",
-            THEME_URL: "https://www.spanishalacarte.com/wp-content/themes/SpanishALaCarta/"
+            URL: "http://localhost/SpanishALaCarta",
+            THEME_URL: "http://localhost/SpanishALaCarta/wp-content/themes/SpanishALaCarta/"
         })
     ],
     optimization:{
