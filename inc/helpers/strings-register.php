@@ -38,3 +38,7 @@ pll_register_string("Single Page", "newsletter_form_description", "Spanisch a la
 pll_register_string("Single Page", "comments", "Spanisch a la carte Theme");
 pll_register_string("Single Page", "write_comment", "Spanisch a la carte Theme");
 pll_register_string("Single Page", "write_comment_description", "Spanisch a la carte Theme");
+
+// Ajax AWN string
+pll_register_string("AWN", "error_message", "Spanisch a la carte Theme");
+pll_register_string("AWN", "success_message", "Spanisch a la carte Theme");

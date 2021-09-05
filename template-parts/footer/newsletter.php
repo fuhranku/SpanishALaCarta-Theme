@@ -13,8 +13,8 @@
     <p class="text-white">
         <?php pll_e("footer newsletter description"); ?>
     </p>
-    <form action="" id="footer-newsletter-form">
-        <input type="email" name="newsletterEmail" placeholder="johndoe@email.com">
+    <form id="footer-newsletter-form">
+        <input type="email" name="email" placeholder="johndoe@email.com">
         <button class="btn btn-newsletter-submit">
             <i class="fas fa-angle-right"></i>
         </button>

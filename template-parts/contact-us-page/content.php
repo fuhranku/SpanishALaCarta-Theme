@@ -3,7 +3,8 @@
 /**
  * Main content section
  * 
- * @package Hammersportmarketing
+ * @package spanischalacarte
+ * @author Frank Ponte
  */
 $content = get_field("content");
 $how_can_we_help = $content["how_can_we_help"];
@@ -13,7 +14,6 @@ $links = array_filter($how_can_we_help["social_media"]["links"], function ($elem
 $faqs = array_filter($content["faqs"], function ($element) {
     return $element !== null && !empty($element["title"]) && !empty($element["description"]);
 });
-$contact_form = $content["contact_form"];
 ?>
 
 <section id="contact-us" class="container my-5 py-5">
@@ -53,56 +53,7 @@ $contact_form = $content["contact_form"];
             </div>
         </div>
         <div class="col-12 col-lg-6 px-5">
-            <form action="#" class="contact-form mt-4 p-5">
-                <h5 class="fw-bold mb-4">
-                    <?php esc_html_e($contact_form["title"]); ?>
-                </h5>
-                <div class="row gy-4">
-                    <div class="col-12 d-flex flex-column">
-                        <label for="nameInput" class="form-label fs-5 fw-bold">
-                            <?php esc_html_e($contact_form["name_field"]["label"]); ?>
-                        </label>
-                        <input type="text" name="nameInput" placeholder="<?php esc_attr_e($contact_form["name_field"]["placeholder"]); ?>" class="form-input">
-                        <ul class="error-list mt-3 small text-danger d-none">
-                            <li>Error 1</li>
-                            <li>Error 2</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 d-flex flex-column">
-                        <label for="nameInput" class="form-label fs-5 fw-bold">
-                            <?php esc_html_e($contact_form["phone_field"]["label"]); ?>
-                        </label>
-                        <input type="text" name="nameInput" placeholder="<?php esc_attr_e($contact_form["phone_field"]["placeholder"]); ?>" class="form-input">
-                        <ul class="error-list mt-3 small text-danger d-none">
-                            <li>Error 1</li>
-                            <li>Error 2</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 d-flex flex-column">
-                        <label for="emailInput" class="form-label fs-5 fw-bold">
-                            <?php esc_html_e($contact_form["email_field"]["label"]); ?>
-                        </label>
-                        <input type="email" name="emailInput" placeholder="<?php esc_attr_e($contact_form["email_field"]["placeholder"]); ?>" class="form-input">
-                        <ul class="error-list mt-3 small text-danger d-none">
-                            <li>Error 1</li>
-                            <li>Error 2</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 d-flex flex-column">
-                        <label for="messageInput" class="form-label fs-5 fw-bold">
-                            <?php esc_html_e($contact_form["message_field"]["label"]); ?>
-                        </label>
-                        <textarea name="messageInput" rows="5" placeholder="<?php esc_attr_e($contact_form["message_field"]["placeholder"]); ?>" class="form-textarea"></textarea>
-                        <ul class="error-list mt-3 small text-danger d-none">
-                            <li>Error 1</li>
-                            <li>Error 2</li>
-                        </ul>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-fit-content mx-auto">
-                        <?php esc_html_e($contact_form["submit_button"]["title"]); ?>
-                    </button>
-                </div>
-            </form>
+            <?php get_template_part("template-parts/contact-us-page/contact-form", "Contact Form"); ?>
             <div class="d-flex d-lg-none flex-column w-100 mt-5 py-4">
                 <h3 class="fw-bold text-center text-lg-start">
                     <?php echo $content["faq_title"]; ?>
