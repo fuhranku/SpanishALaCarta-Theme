@@ -15,8 +15,8 @@
     <p class="mb-4 text-white text-center text-md-start">
         <?php pll_e("newsletter_form_description"); ?>
     </p>
-    <form action="/" class="theme-form w-100 w-md-50">
-        <input type="email" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="johndoe@mail.com" />
+    <form class="theme-form w-100 w-md-50" id="single-newsletter-form">
+        <input type="email" name="email" placeholder="johndoe@mail.com" />
         <button type="submit">
             <?php pll_e("subscribe"); ?>
         </button>
