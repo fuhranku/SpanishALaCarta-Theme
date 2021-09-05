@@ -35,7 +35,7 @@ module.exports = merge(common, {
                     {
                       loader: 'file-loader',
                       options: {
-                        publicPath: "https://staging.spanishalacarte.com/wp-content/themes/spanischalacarte/assets/build/images",
+                        publicPath: "https://staging.frankponte.com/wp-content/themes/spanischalacarte/assets/build/images",
                         outputPath: "/images",
                         name: '[name].[ext]',
                       }
