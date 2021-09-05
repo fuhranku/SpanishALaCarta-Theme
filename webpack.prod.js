@@ -53,8 +53,8 @@ module.exports = merge(common, {
             jQuery: 'jquery'
         }),
         new webpack.EnvironmentPlugin({
-            URL: "https://staging.spanishalacarte.com/",
-            THEME_URL: "https://staging.spanishalacarte.com/wp-content/themes/spanischalacarte/"
+            URL: "https://staging.frankponte.com/",
+            THEME_URL: "https://staging.frankponte.com/wp-content/themes/spanischalacarte/"
         })
     ],
     optimization:{
