@@ -1,109 +1,117 @@
-.wpadminbar-exists{
-    top: 0 !important;
+.wpadminbar-exists {
+  top: 0 !important;
 }
-  
-@include media(">=mobile-l"){
-    .wpadminbar-exists{
-        top: 50px !important;
-    }
+
+@include media(">=mobile-l") {
+  .wpadminbar-exists {
+    top: 50px !important;
+  }
 }
 
 .blur-up {
--webkit-filter: blur(5px);
-filter: blur(5px);
-transition: filter 400ms, -webkit-filter 400ms;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
 }
-  
+
 .blur-up.lazyloaded {
--webkit-filter: blur(0);
-filter: blur(0);
+  -webkit-filter: blur(0);
+  filter: blur(0);
 }
 
-.object-fit-cover{
-    object-fit: cover;
+.object-fit-cover {
+  object-fit: cover;
 }
 
-.w-fit-content{
-    width: fit-content;
+.w-fit-content {
+  width: fit-content;
 }
 
-.text-blue{
-    color: $secondary;
+.text-blue {
+  color: $secondary;
 }
 
-.text-red{
-    color: $primary;
+.text-red {
+  color: $primary;
 }
 
-.bg-yellow{
-    background-color: $yellow;
+.bg-yellow {
+  background-color: $yellow;
 }
 
-.bg-dark-blue{
-    background-color: #041A40;
+.bg-dark-blue {
+  background-color: #041a40;
 }
 
-.bg-blue{
-    background-color: $secondary;
+.bg-blue {
+  background-color: $secondary;
 }
 
-.bg-theme-gradient{
-    background: linear-gradient(91.5deg, #3D70B1 11.77%, #FF2243 136.6%);
+.bg-theme-gradient {
+  background: linear-gradient(91.5deg, #3d70b1 11.77%, #ff2243 136.6%);
 }
 
-.shadow-red{
-    box-shadow: 10px 17px $primary;
+.shadow-red {
+  box-shadow: 10px 17px $primary;
 }
 
-.vertical-separator{
-    top: 50%;
-    width: 1px;
-    background: #1A2430;
-    transform: translate(-50%,-50%);
-    &.right{
-        left:100%;
-    }
+.vertical-separator {
+  top: 50%;
+  width: 1px;
+  background: #1a2430;
+  transform: translate(-50%, -50%);
+  &.right {
+    left: 100%;
+  }
 }
 
-.title-separator{
-    flex-grow: 100;
-    height: 1px;
-    background-color: $primary;
+.title-separator {
+  flex-grow: 100;
+  height: 1px;
+  background-color: $primary;
 }
 
-.theme-list{
-    list-style-type: none;
+.theme-list {
+  list-style-type: none;
 }
 
-.z-n1{
-    z-index: -1;
+.z-n1 {
+  z-index: -1;
 }
-.z-n2{
-    z-index: -2;
-}
-
-.z-0{
-    z-index: 0;
+.z-n2 {
+  z-index: -2;
 }
 
-.z-1{
-    z-index: 1;
+.z-0 {
+  z-index: 0;
 }
 
-.social-link{
-    display: flex;
-    width: 42px;
-    height: 42px;
-    background: #3D70B1;
-    color: $white;
-    font-size: 23px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px solid #3D70B1;
-    transition: .4s all ease-in-out;
-    &:hover,&:active{
-        background-color: transparent;
-        color: #3D70B1 !important;
-    }
+.z-1 {
+  z-index: 1;
+}
+
+.social-link {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  background: #3d70b1;
+  color: $white;
+  font-size: 23px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #3d70b1;
+  transition: 0.4s all ease-in-out;
+  &:hover,
+  &:active {
+    background-color: transparent;
+    color: #3d70b1 !important;
+  }
+}
+
+.step {
+  .ays-abs-fs {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
