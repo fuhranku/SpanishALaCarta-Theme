@@ -14,7 +14,7 @@
             <div class="col-3">
                 <?php theme_lazy_image($content["image"],"w-100 h-auto d-none d-lg-block","",403,403); ?>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 py-5 py-lg-0">
                 <h2 class="fw-bold mb-4 text-white text-center text-lg-start">
                     <?php esc_html_e($content["title"]); ?>
                 </h2>

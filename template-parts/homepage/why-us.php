@@ -24,7 +24,7 @@ $content = get_field("why_us_section");
         </div>
         <div class="col-12 d-block d-lg-none mt-5">
             <p class="text-center">
-                <?php esc_html_e($content["description"]); ?>
+                <?php echo ($content["description"]); ?>
             </p>
         </div>
     </div>
