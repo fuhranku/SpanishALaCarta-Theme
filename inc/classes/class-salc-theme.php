@@ -35,6 +35,7 @@ class SALC_THEME
 		 */
 		add_action('after_setup_theme', [$this, 'setup_theme']);
 		add_action('customize_register', [$this, 'theme_customizer_options']);
+		add_action('after_setup_theme', [$this, 'theme_add_woocommerce_support']);
 
 		/**
 		 * Filters
@@ -52,6 +53,11 @@ class SALC_THEME
 		add_action('wp_ajax_theme_send_newsletter_form', [$this, 'send_newsletter_form']);
 		add_action('wp_ajax_nopriv_theme_send_comment_form', [$this, 'send_comment_form']);
 		add_action('wp_ajax_theme_send_comment_form', [$this, 'send_comment_form']);
+
+		/**
+		 * WooCommerce
+		 */
+		add_action('theme_wc_show_ordering', 'woocommerce_catalog_ordering', 30);
 	}
 
 	public function setup_theme()
@@ -445,5 +451,10 @@ class SALC_THEME
 			wp_send_json(null, 400);
 		}
 		wp_die();
+	}
+
+	function theme_add_woocommerce_support()
+	{
+		add_theme_support('woocommerce');
 	}
 }

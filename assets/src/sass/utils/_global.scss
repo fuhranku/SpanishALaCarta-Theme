@@ -51,6 +51,10 @@
   background: linear-gradient(91.5deg, #3d70b1 11.77%, #ff2243 136.6%);
 }
 
+.bg-gray {
+  background-color: $white;
+}
+
 .shadow-red {
   box-shadow: 10px 17px $primary;
 }
@@ -63,6 +67,15 @@
   &.right {
     left: 100%;
   }
+}
+
+.text-line-through {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 34, 67, 1);
+}
+
+.text-disabled {
+  color: rgba($secondary, 0.3);
 }
 
 .title-separator {

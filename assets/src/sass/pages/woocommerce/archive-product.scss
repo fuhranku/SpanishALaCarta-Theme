@@ -1,0 +1,47 @@
+@import "/node_modules/include-media/dist/include-media";
+@import "../../vendors-extensions/include-media";
+@import "../../utils/imports";
+@import "../../components/searchform";
+@import "../../components/post";
+@import "../../components/pagination";
+
+.product-category {
+  text-decoration: none;
+  transition: 0.4s all ease-in-out;
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+  &:nth-child(2n) {
+    background: rgba(6, 100, 255, 0.15);
+    color: rgba(4, 31, 76, 1);
+    &:hover {
+      color: rgba(4, 31, 76, 1) !important;
+      background: rgba(6, 100, 255, 0.4);
+    }
+  }
+  &:nth-child(2n + 1) {
+    background: rgba(255, 34, 67, 0.2);
+    color: rgba(255, 34, 67, 1);
+    &:hover {
+      color: rgba(255, 34, 67, 1) !important;
+      background: rgba(255, 34, 67, 0.4);
+    }
+  }
+}
+
+.product-price {
+  background: rgba(6, 100, 255, 0.15);
+}
+
+.btn-add-to-cart{
+    background: transparent;
+    border: 2px solid $secondary;
+    color: $secondary !important;
+    transition: all .4s ease-in-out;
+    text-transform: capitalize;
+    &:hover,&:active{
+        background: $primary;
+        border-color: $primary;
+        color: $white !important;
+    }
+}

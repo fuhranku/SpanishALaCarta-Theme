@@ -2,156 +2,58 @@
 @import "../vendors-extensions/include-media";
 @import "../utils/imports";
 @import "../components/searchform";
+@import "../components/post";
+@import "../components/pagination";
 
-.categories-slider{
+.categories-slider {
+  overflow: hidden;
+  .inner-container {
+    flex-grow: 100;
     overflow: hidden;
-    .inner-container{
-        flex-grow: 100;
-        overflow: hidden;
-    }
+  }
 }
 
-.category-slide{
-    width: max-content;
-    padding: .6rem 1rem;
-    position: relative;
-    text-decoration: none;
-    color: $secondary;
-    &.active{
-        font-weight: bold;
-        &::after{
-            position: absolute;
-            content: '';
-            width: 60%;
-            height: 3px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: $secondary;
-        }
-        &:hover{
-            &::after{
-                background-color: $primary;
-            }
-        }
+.category-slide {
+  width: max-content;
+  padding: 0.6rem 1rem;
+  position: relative;
+  text-decoration: none;
+  color: $secondary;
+  &.active {
+    font-weight: bold;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 60%;
+      height: 3px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $secondary;
     }
-}
-
-.categories-button{
-    &-prev,&-next{
-        top: 0;
-        font-size: 1.4rem;
-        cursor: pointer;
-    }
-    &-prev{
-        left: -10%;
-    }
-    &-next{
-        right: -10%;
-    }
-}
-.categories-control-disabled{
-    color: #D8D9D8;
-    cursor: default;
-}
-
-.post-featured-image{
-    border-radius: 30px;
-}
-
-.post-author{
-    a{
-        text-decoration: none;
-        color: $secondary;
-        transition: .2s all ease-in-out;
-        .avatar{
-            background-color: $secondary;
-            color: $white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: .2s all ease-in-out;
-        }
-        &:hover, &:active, &:focus{
-            color: $primary;
-            text-decoration: underline;
-            .avatar{
-                background-color: $primary;
-            }
-        }
-    }
-}
-
-.post-date{
-    div{
-        text-decoration: none;
-        color: $secondary;
-        .calendar-icon{
-            font-size: 22px;
-        }
-    }
-}
-
-.post-title, .post-read-more{
-    color: $secondary;
-    text-decoration: none;
-    transition: .2s all ease-in-out;
-    &:hover, &:active, &:focus{
-        color: $primary;
-        text-decoration: underline;
-    }
-}
-
-.post-read-more{
-    &:hover, &:active, &:focus{
-        text-decoration: none;
-    }
-}
-
-.blog-pagination{
-    gap: .5rem;
-    a, span.page-numbers{
-        font-size: 18px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        text-decoration: none;
-        transition: .2s all ease-in-out;
-    }
-    .next.page-numbers,.prev.page-numbers{
+    &:hover {
+      &::after {
         background-color: $primary;
-        border: 2px solid $primary;
-        color: $white;
-        &:hover, &:active, &:focus{
-            color: $secondary !important;
-            background-color: transparent;
-            border: 2px solid $secondary;
-        }
+      }
     }
-    .page-numbers.current{
-        background-color: $primary;
-        border: 2px solid $primary;
-        color: $white;
-        &:hover, &:active, &:focus{
-            background-color: $primary;
-            border: 2px solid $primary;
-            color: $white !important;
-        }
-    }
-    .page-numbers{
-        background-color: #f3f3f3;
-        border: 2px solid #d3d3d3;
-        color: #d3d3d3;
-        &:hover, &:active, &:focus{
-            color: $secondary !important;
-            background-color: transparent;
-            border: 2px solid $secondary;
-        }
-    }
+  }
+}
+
+.categories-button {
+  &-prev,
+  &-next {
+    top: 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  &-prev {
+    left: -10%;
+  }
+  &-next {
+    right: -10%;
+  }
+}
+.categories-control-disabled {
+  color: #d8d9d8;
+  cursor: default;
 }

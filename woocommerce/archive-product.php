@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * Archive product template
+ * 
+ * @package spanischalacarte
+ */
+get_header();
+// Code taken from:  https://cfxdesign.com/create-a-custom-woocommerce-product-loop-the-right-way/
+if (!function_exists('wc_get_products')) {
+    return;
+}
+
+$paged                   = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+$ordering                = WC()->query->get_catalog_ordering_args();
+$ordering['orderby']     = array_shift(explode(' ', $ordering['orderby']));
+$ordering['orderby']     = stristr($ordering['orderby'], 'price') ? 'meta_value_num' : $ordering['orderby'];
+$products_per_page       = apply_filters('loop_shop_per_page', wc_get_default_products_per_row() * wc_get_default_product_rows_per_page());
+
+$featured_products       = wc_get_products(array(
+    'meta_key'             => '_price',
+    'status'               => 'publish',
+    'limit'                => $products_per_page,
+    'page'                 => $paged,
+    'paginate'             => true,
+    'return'               => 'ids',
+    'orderby'              => $ordering['orderby'],
+    'order'                => $ordering['order'],
+));
+
+wc_set_loop_prop('current_page', $paged);
+wc_set_loop_prop('is_paginated', wc_string_to_bool(true));
+wc_set_loop_prop('page_template', get_page_template_slug());
+wc_set_loop_prop('per_page', $products_per_page);
+wc_set_loop_prop('total', $featured_products->total);
+wc_set_loop_prop('total_pages', $featured_products->max_num_pages);
+?>
+<section id="archive-product" class="container-fluid">
+    <?php get_template_part("template-parts/store/archive-product/header", "Shop page header"); ?>
+    <div class="container my-5">
+        <div class="row gx-5 gy-5">
+            <?php
+            
+            if ($featured_products) {
+                foreach ($featured_products->products as $featured_product) {
+                    $post_object = get_post($featured_product);
+                    setup_postdata($GLOBALS['post'] = &$post_object);
+                    get_template_part("template-parts/blog/post", "Blog component");
+                }
+                wp_reset_postdata();
+                woocommerce_pagination();
+            } else {
+                do_action('woocommerce_no_products_found');
+            }
+            ?>
+        </div>
+    </div>
+</section>
+
+<?php
+get_footer();

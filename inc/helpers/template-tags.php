@@ -206,6 +206,11 @@ function theme_get_page_banner()
 			];
 		}
 		return get_template_part('template-parts/header/banners/common-banner', 'All pages except homepage', $arguments);
+	} else if (is_shop() || is_product_category()) {
+		$arguments = [
+			"title" => woocommerce_page_title(false)
+		];
+		return get_template_part('template-parts/header/banners/common-banner', 'Woocommerce store', $arguments);
 	} else {
 		$page_slug = get_current_template_name() . "-";
 		$ACF_banner_group_slug = $page_slug . "banner";

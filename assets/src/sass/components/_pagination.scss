@@ -1,0 +1,44 @@
+.blog-pagination{
+    gap: .5rem;
+    a, span.page-numbers{
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: .2s all ease-in-out;
+    }
+    .next.page-numbers,.prev.page-numbers{
+        background-color: $primary;
+        border: 2px solid $primary;
+        color: $white;
+        &:hover, &:active, &:focus{
+            color: $secondary !important;
+            background-color: transparent;
+            border: 2px solid $secondary;
+        }
+    }
+    .page-numbers.current{
+        background-color: $primary;
+        border: 2px solid $primary;
+        color: $white;
+        &:hover, &:active, &:focus{
+            background-color: $primary;
+            border: 2px solid $primary;
+            color: $white !important;
+        }
+    }
+    .page-numbers{
+        background-color: #f3f3f3;
+        border: 2px solid #d3d3d3;
+        color: #d3d3d3;
+        &:hover, &:active, &:focus{
+            color: $secondary !important;
+            background-color: transparent;
+            border: 2px solid $secondary;
+        }
+    }
+}
