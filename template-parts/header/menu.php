@@ -66,14 +66,17 @@ global $woocommerce;
     </nav>
     <nav class="header-menu ms-0 ms-lg-4 mt-4 mt-lg-0 d-flex">
         <div class="header-menu-cart me-3 position-relative">
-            <div class="cart-items-counter position-absolute small rounded-circle px-1 d-flex align-items-center justify-content-center">
-                <?php esc_html_e($woocommerce->cart->cart_contents_count); ?>
+            <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
+                <div class="cart-items-counter position-absolute small rounded-circle px-1 d-flex align-items-center justify-content-center">
+                    <?php esc_html_e($woocommerce->cart->cart_contents_count); ?>
+                </div>
+            <?php endif; ?>
+            <div class="cart-dropdown rounded-circle d-flex align-items-center justify-content-center p-3 <?php esc_attr_e(is_front_page() ? "bg-white" : "bg-dark-blue text-white"); ?>">
+                <i class="fas fa-shopping-cart fs-5"></i>
             </div>
-            <div class="cart-dropdown rounded-circle d-flex align-items-center justify-content-center p-3">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
+            <?php get_template_part("template-parts/header/cart-dropdown-menu"); ?>
         </div>
-        <a href="https://calendly.com/spanischalacarte/20min" class="btn btn-header<?php echo !$home_banner ? '-alt' : ''; ?>" target="_blank">
+        <a href="https://calendly.com/spanischalacarte/20min" class="align-self-center btn btn-header<?php echo !$home_banner ? '-alt' : ''; ?>" target="_blank">
             <?php pll_e("Trial class"); ?>
         </a>
     </nav>

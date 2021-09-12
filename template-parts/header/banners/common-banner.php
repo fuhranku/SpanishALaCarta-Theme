@@ -13,6 +13,8 @@ if (is_category()) {
     $title = pll__("Author") . " - " . pll__("Archive");
 } else if (is_search()) {
     $title = pll__("Search") . " - " . pll__("Archive");
+} else if (get_post_type() === 'post') {
+    $title = "";
 } else if (get_current_template_name() === "theme-empty" || basename(get_page_template()) === 'page.php') {
     $title = get_the_title();
 }

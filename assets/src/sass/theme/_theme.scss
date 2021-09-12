@@ -1,3 +1,4 @@
+@import "../components/product-category";
 body {
   color: $secondary;
   line-height: normal;
@@ -43,6 +44,33 @@ a {
   flex-direction: column;
   &.page-loaded {
     animation: fadeOut 0.8s forwards;
+  }
+}
+
+.btn-cart-dropdown {
+  background: transparent;
+  border: 2px solid $secondary;
+  color: $secondary !important;
+  transition: all 0.4s ease-in-out;
+  text-transform: capitalize;
+  &:hover,
+  &:active {
+    background: $primary !important;
+    border-color: $primary;
+    color: $white !important;
+  }
+}
+
+.btn-secondary{
+  border-radius: 60px;
+  background-color: $secondary;
+  border-color: $secondary;
+  padding: .5rem 2rem;
+  transition: .4s all ease-in-out;
+  &:hover{
+      border-color: $secondary;
+      background-color: transparent;
+      color: $secondary !important;
   }
 }
 
@@ -124,16 +152,28 @@ form.theme-form {
 
 .header-menu-cart {
   .cart-dropdown {
-    background-color: $secondary;
-    color: #fff;
+    cursor: pointer;
   }
   .cart-items-counter {
     background-color: $primary;
     color: #fff;
-    right: 10%;
-    top: -5%;
+    right: -10%;
+    top: -3%;
     width: 21px;
     height: 21px;
+  }
+  .cart-dropdown-menu {
+    width: 400px;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-90%, 98%);
+    .dropdown-cart-list {
+      .dropdown-cart-item {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
 }
 

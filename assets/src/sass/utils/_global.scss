@@ -35,6 +35,14 @@
   color: $primary;
 }
 
+.bg-primary{
+  background-color: $primary !important;
+}
+
+.bg-white{
+  background-color: #fff;
+}
+
 .bg-yellow {
   background-color: $yellow;
 }
@@ -57,6 +65,10 @@
 
 .shadow-red {
   box-shadow: 10px 17px $primary;
+}
+
+.h-separator{
+  height: 1px;
 }
 
 .vertical-separator {

@@ -38,9 +38,9 @@ wc_set_loop_prop('total_pages', $featured_products->max_num_pages);
 <section id="archive-product" class="container-fluid">
     <?php get_template_part("template-parts/store/archive-product/header", "Shop page header"); ?>
     <div class="container my-5">
-        <div class="row gx-5 gy-5">
+        <div class="row gx-5 gy-5 w-100 w-md-75 w-lg-100 mx-auto">
             <?php
-            
+
             if ($featured_products) {
                 foreach ($featured_products->products as $featured_product) {
                     $post_object = get_post($featured_product);
@@ -54,6 +54,7 @@ wc_set_loop_prop('total_pages', $featured_products->max_num_pages);
             }
             ?>
         </div>
+        <?php get_template_part("template-parts/store/featured-products"); ?>
     </div>
 </section>
 
