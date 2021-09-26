@@ -10,7 +10,7 @@ $button = $content["button"];
 ?>
 
 <section id="free-class-lead-magnet" class="container-fluid bg-yellow my-5 py-5 position-relative z-0">
-    <?php theme_lazy_image(163, "lead-magnet-shape position-absolute w-100 h-100 z-n1", "", 1900, 627); ?>
+    <?php theme_lazy_image(18692, "lead-magnet-shape position-absolute w-100 h-100 z-n1", "", 1900, 627); ?>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6">

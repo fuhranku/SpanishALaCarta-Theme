@@ -8,7 +8,7 @@
 ?>
 
 <section id="nivelation-test" class="container-fluid position-relative px-0 py-5 my-5">
-    <?php theme_lazy_image(153,"w-100 h-100 nivelation-section-shape position-absolute z-n1","",1920,793); ?>
+    <?php theme_lazy_image(18700,"w-100 h-100 nivelation-section-shape position-absolute z-n1","",1920,793); ?>
     <div class="container pt-5 px-5 px-lg-0">
         <div class="row align-items-center pt-5 pb-0 pb-lg-5 gx-5">
             <div class="col-3">
