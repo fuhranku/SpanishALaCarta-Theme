@@ -35,6 +35,10 @@ module.exports = {
         import: JS_DIR + "/pages/woocommerce/archive-product.js",
         dependOn: ["main", "vendor"]
       },
+      single_product: {
+        import: JS_DIR + "/pages/woocommerce/single-product.js",
+        dependOn: ["main", "vendor"]
+      },
       utilsScript: "/node_modules/intl-tel-input/build/js/utils.js"
     },
     plugins: [

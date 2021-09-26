@@ -1,9 +1,13 @@
 @import "/node_modules/include-media/dist/include-media";
 @import "../../vendors-extensions/include-media";
 @import "../../utils/imports";
-@import "../../components/searchform";
-@import "../../components/post";
-@import "../../components/pagination";
-@import "../../components/product-category";
 @import "../single.scss";
+@import "../../components/post";
 
+.product-header {
+  margin-top: -12rem;
+}
+
+.star-rating {
+  float: unset !important;
+}
