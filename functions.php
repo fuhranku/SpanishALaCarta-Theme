@@ -1,15 +1,12 @@
 <?php 
-
 /**
  *   Theme functions.
  *  
  *  @package SpanishALaCarte
  */
-
 // echo '<pre>';
 // print_r($path);
 // wp_die();
-
 if (!defined('THEME_DIR_PATH')){
     define('THEME_DIR_PATH', untrailingslashit( get_template_directory() ));
 }
@@ -49,10 +46,5 @@ require_once THEME_DIR_PATH . '/inc/helpers/strings-register.php';
 function salc_get_theme_instance(){
     \SPANISHALACARTE\Inc\SALC_THEME::get_instance();
 }
-
 salc_get_theme_instance();
-
-
-
 ?>
-
