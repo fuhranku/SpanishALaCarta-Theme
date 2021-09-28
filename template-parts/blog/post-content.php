@@ -114,7 +114,7 @@ if (is_shop() || is_product_category() || is_product()) {
             </div>
             <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" class="btn btn-add-to-cart">
                 <i class="fas fa-shopping-cart me-4"></i>
-                Add to cart
+                <?php esc_html_e(pll__("Add to cart")); ?>
             </a>
         </div>
     <?php endif; ?>

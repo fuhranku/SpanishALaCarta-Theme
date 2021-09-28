@@ -20,7 +20,7 @@ if (!$loop->have_posts()) return;
 <section class="featured-products">
     <div class="d-flex justify-content-between align-items-center align-self-start w-100 my-5 px-5 px-lg-0">
         <h2 class="fw-bold me-5">
-            Featured products
+            <?php esc_html_e(pll__("Featured products")); ?>
         </h2>
         <div class="title-separator"></div>
     </div>

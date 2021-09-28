@@ -11,7 +11,7 @@ $search_filter = array_key_exists("filter", $args) ? $args["filter"] : "post";
 
 <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="search-form w-100 d-flex">
     <label for="search" class="sr-only">Search in <?php echo home_url('/'); ?></label>
-    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Buscar" />
+    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php esc_attr_e(pll__("Search"));?>" />
     <button type="submit">
         <i class="fas fa-search"></i>
     </button>
