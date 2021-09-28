@@ -42,3 +42,7 @@ pll_register_string("Single Page", "write_comment_description", "Spanisch a la c
 // Ajax AWN string
 pll_register_string("AWN", "error_message", "Spanisch a la carte Theme");
 pll_register_string("AWN", "success_message", "Spanisch a la carte Theme");
+
+// WooCommerce
+pll_register_string("WooCommerce", "All products", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Featured products", "Spanisch a la carte Theme");

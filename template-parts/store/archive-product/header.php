@@ -8,7 +8,7 @@
 $page_subtitle = function () {
     global $wp_query;
     if (is_shop()) {
-        return "All products";
+        return pll__("All products");
     }
     if (is_product_category()) {
         return $wp_query->get_queried_object()->name;

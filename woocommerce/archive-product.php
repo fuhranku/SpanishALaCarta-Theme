@@ -17,7 +17,7 @@ if (!is_search()) {
     $ordering['orderby']     = stristr($ordering['orderby'], 'price') ? 'meta_value_num' : $ordering['orderby'];
     $products_per_page       = apply_filters('loop_shop_per_page', wc_get_default_products_per_row() * wc_get_default_product_rows_per_page());
 
-    $featured_products       = wc_get_products(array(
+    $products_query       = wc_get_products(array(
         'meta_key'             => '_price',
         'status'               => 'publish',
         'limit'                => $products_per_page,
@@ -32,8 +32,8 @@ if (!is_search()) {
     wc_set_loop_prop('is_paginated', wc_string_to_bool(true));
     wc_set_loop_prop('page_template', get_page_template_slug());
     wc_set_loop_prop('per_page', $products_per_page);
-    wc_set_loop_prop('total', $featured_products->total);
-    wc_set_loop_prop('total_pages', $featured_products->max_num_pages);
+    wc_set_loop_prop('total', $products_query->total);
+    wc_set_loop_prop('total_pages', $products_query->max_num_pages);
 }
 ?>
 <section id="archive-product" class="container-fluid">
@@ -42,9 +42,9 @@ if (!is_search()) {
         <div class="row gx-5 gy-5 w-100 w-md-75 w-lg-100 mx-auto">
             <?php
             if (!is_search()) {
-                if ($featured_products) {
-                    foreach ($featured_products->products as $featured_product) {
-                        $post_object = get_post($featured_product);
+                if ($products_query->products) {
+                    foreach ($products_query->products as $product) {
+                        $post_object = get_post($product);
                         setup_postdata($GLOBALS['post'] = &$post_object);
                         get_template_part("template-parts/blog/post", "Blog component");
                     }
