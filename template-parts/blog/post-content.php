@@ -53,7 +53,9 @@ if (is_shop() || is_product_category() || is_product()) {
                 </span>
             </div>
         <?php else : ?>
-            <div class="fw-bold text-disabled">No rating yet.</div>
+            <div class="fw-bold text-disabled">
+                <?php esc_html_e(pll__("No rating yet")); ?>
+            </div>
     <?php
         endif;
     endif;

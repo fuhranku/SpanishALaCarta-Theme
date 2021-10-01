@@ -19,7 +19,7 @@ $items = $cart_object->get_cart();
                 $_product =  wc_get_product($values['data']->get_id());
             ?>
                 <li class="dropdown-cart-item d-flex align-items-center">
-                    <?php theme_lazy_image(222, "rounded me-4 object-fit-cover", "", 80, 80); ?>
+                    <?php theme_lazy_image(get_post_thumbnail_id($_product->get_id()), "rounded me-4 object-fit-cover", "", 80, 80); ?>
                     <div class="content d-flex flex-column">
                         <div class="heading d-flex align-items-center">
                             <h4 class="fs-6 mb-0 me-3">
@@ -54,22 +54,33 @@ $items = $cart_object->get_cart();
             ?>
 
         </ul>
-        <a href="<?php echo esc_url(site_url() . "/cart"); ?>" class=" btn btn-cart-dropdown">Ver más &darr;</a>
+        <a href="<?php echo esc_url(get_permalink(pll_get_post(35))); ?>" class=" btn btn-cart-dropdown">
+            <?php esc_html_e(pll__("See more")); ?> &darr;    
+        </a>
         <div class="h-separator bg-primary w-100 my-4"></div>
         <div class="d-flex flex-column align-items-center">
-            <h4>Subtotal:
+            <h4>
+                <?php esc_html_e(pll__("Subtotal"));?>:
                 <span class="subtotal">
                     <?php esc_html_e(get_woocommerce_currency_symbol()); ?>
                     <?php esc_html_e($cart_object->get_cart_contents_total()); ?>
                 </span>
             </h4>
-            <a href="<?php echo esc_url(site_url() . "/checkout"); ?>" class="btn btn-secondary my-3 text-white">Pagar ahora</a>
-            <a href="<?php echo esc_url(site_url() . "/cart"); ?>" class="btn btn-cart-dropdown">Ver carrito</a>
+            <a href="<?php echo esc_url(get_permalink(pll_get_post(36))); ?>" class="btn btn-secondary my-3 text-white">
+                <?php esc_html_e(pll__("Pay now"));?>
+            </a>
+            <a href="<?php echo esc_url(get_permalink(pll_get_post(35))); ?>" class="btn btn-cart-dropdown">
+                <?php esc_html_e(pll__("Cart"));?>
+            </a>
         </div>
     <?php else : ?>
         <div class="d-flex flex-column justify-content-center align-items-center p-4">
-            <h3 class="fs-5">Your cart is empty</h3>
-            <a href="<?php echo esc_url(site_url() . "/shop"); ?>" class="btn btn-secondary mt-3 text-white">Shop now</a>
+            <h3 class="fs-5">
+                <?php esc_html_e(pll__("Your cart is empty"));?>
+            </h3>
+            <a href="<?php echo esc_url(get_permalink(pll_get_post(34))); ?>" class="btn btn-secondary mt-3 text-white">
+                <?php esc_html_e(pll__("Shop now"));?>
+            </a>
         </div>
     <?php endif; ?>
 </div>

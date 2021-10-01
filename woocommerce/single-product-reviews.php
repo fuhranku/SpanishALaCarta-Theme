@@ -32,7 +32,7 @@ if (!comments_open()) {
 			$count = $product->get_review_count();
 			if ($count && wc_review_ratings_enabled()) {
 				/* translators: 1: reviews count 2: product name */
-				$reviews_title = sprintf(_n('<span class="text-red">%1$s</span> review for <span class="text-red">%2$s</span>', '<span class="text-red">%1$s</span> reviews for <span class="text-red">%2$s</span>', $count, 'woocommerce'), esc_html($count), '<span>' . get_the_title() . '</span>');
+				$reviews_title = sprintf(_n('<span class="text-red">%1$s</span> %3$s <span class="text-red">%2$s</span>', '<span class="text-red">%1$s</span> %4$s <span class="text-red">%2$s</span>', $count, 'woocommerce'), esc_html($count), '<span>' . get_the_title() . '</span>', pll__("Review for"), pll__("Reviews for"));
 				echo apply_filters('woocommerce_reviews_title', $reviews_title, $count, $product); // WPCS: XSS ok.
 			} else {
 				esc_html_e('Reviews', 'woocommerce');
