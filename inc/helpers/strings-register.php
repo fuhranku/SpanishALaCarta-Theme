@@ -46,3 +46,21 @@ pll_register_string("AWN", "success_message", "Spanisch a la carte Theme");
 // WooCommerce
 pll_register_string("WooCommerce", "All products", "Spanisch a la carte Theme");
 pll_register_string("WooCommerce", "Featured products", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "See more", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "No rating yet", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Subtotal", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Pay now", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Buy now", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Add to cart", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Cart", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Your cart is empty", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Shop now", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Review for", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "Reviews for", "Spanisch a la carte Theme");
+
+
+
+
+
+
+

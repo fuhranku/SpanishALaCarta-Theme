@@ -23,7 +23,9 @@ $product = wc_get_product(get_the_ID());
                     </span>
                 </div>
             <?php else : ?>
-                <div class="fw-bold text-disabled">No rating yet.</div>
+                <div class="fw-bold text-disabled">
+                    <?php pll_e("No rating yet"); ?>
+                </div>
             <?php endif; ?>
             <p>
                 <?php the_excerpt(); ?>
@@ -50,10 +52,10 @@ $product = wc_get_product(get_the_ID());
             </h2>
             <div class="d-flex my-3 flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
                 <a href="<?php echo esc_url(home_url("/") . "checkout/?add-to-cart=" . get_the_ID()); ?>" class="btn btn-primary me-md-3">
-                    Comprar ahora
+                    <?php pll_e("Buy now");?>
                 </a>
                 <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" class="btn btn-header-alt mt-3 mt-md-0">
-                    Añadir al carrito
+                    <?php pll_e("Add to cart");?>
                 </a>
             </div>
         </div>
