@@ -118,3 +118,8 @@ $(".comment-form").on("submit", (e) => {
     }
   );
 });
+
+$(".share-link").on("click", function (e) {
+  e.preventDefault();
+  window.open($(this).attr("href"), "Share", "width=600,height=400");
+});

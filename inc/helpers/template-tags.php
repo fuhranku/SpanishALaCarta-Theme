@@ -296,3 +296,9 @@ function theme_get_comment_date($comment_ID)
 		printf('%1$s', get_comment_date("m/d/y", $comment_ID));
 	}
 }
+
+function getCurrentUrl()
+{
+	$protocol = is_ssl() ? 'https://' : 'http://';
+	return ($protocol) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+}
