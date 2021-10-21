@@ -7,7 +7,7 @@
  * 
  */
 get_template_part("template-parts/single/post-header");
-$twitter_link = "https://twitter.com/intent/tweet" . getCurrentUrl();
+$twitter_link = "https://twitter.com/intent/tweet?url=" . getCurrentUrl();
 $facebook_link = "https://facebook.com/sharer.php?u=" . getCurrentUrl();
 $linkedin_link = "https://www.linkedin.com/sharing/share-offsite/?url=" . getCurrentUrl();
 ?>
