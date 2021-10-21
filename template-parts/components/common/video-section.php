@@ -13,7 +13,7 @@ $content = get_field("video_section");
             <?php echo $content["title"]; ?>
         </h2>
         <div>
-            <?php esc_html_e($content["description"]); ?>
+            <?php echo $content["description"]; ?>
         </div>
     </div>
     <div class="container-fluid px-0 position-relative my-5">
