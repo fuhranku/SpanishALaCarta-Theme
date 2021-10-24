@@ -54,7 +54,7 @@ $items = $cart_object->get_cart();
             ?>
 
         </ul>
-        <a href="<?php echo esc_url(get_permalink(pll_get_post(35))); ?>" class=" btn btn-cart-dropdown">
+        <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class=" btn btn-cart-dropdown">
             <?php esc_html_e(pll__("See more")); ?> &darr;
         </a>
         <div class="h-separator bg-primary w-100 my-4"></div>
