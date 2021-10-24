@@ -55,31 +55,31 @@ $items = $cart_object->get_cart();
 
         </ul>
         <a href="<?php echo esc_url(get_permalink(pll_get_post(35))); ?>" class=" btn btn-cart-dropdown">
-            <?php esc_html_e(pll__("See more")); ?> &darr;    
+            <?php esc_html_e(pll__("See more")); ?> &darr;
         </a>
         <div class="h-separator bg-primary w-100 my-4"></div>
         <div class="d-flex flex-column align-items-center">
             <h4>
-                <?php esc_html_e(pll__("Subtotal"));?>:
+                <?php esc_html_e(pll__("Subtotal")); ?>:
                 <span class="subtotal">
                     <?php esc_html_e(get_woocommerce_currency_symbol()); ?>
                     <?php esc_html_e($cart_object->get_cart_contents_total()); ?>
                 </span>
             </h4>
-            <a href="<?php echo esc_url(get_permalink(pll_get_post(36))); ?>" class="btn btn-secondary my-3 text-white">
-                <?php esc_html_e(pll__("Pay now"));?>
+            <a href="<?php echo esc_url(get_permalink(pll_get_post(wc_get_checkout_url()))); ?>" class="btn btn-secondary my-3 text-white">
+                <?php esc_html_e(pll__("Pay now")); ?>
             </a>
-            <a href="<?php echo esc_url(get_permalink(pll_get_post(35))); ?>" class="btn btn-cart-dropdown">
-                <?php esc_html_e(pll__("Cart"));?>
+            <a href="<?php echo esc_url(get_permalink(wc_get_cart_url())); ?>" class="btn btn-cart-dropdown">
+                <?php esc_html_e(pll__("Cart")); ?>
             </a>
         </div>
     <?php else : ?>
         <div class="d-flex flex-column justify-content-center align-items-center p-4">
             <h3 class="fs-5">
-                <?php esc_html_e(pll__("Your cart is empty"));?>
+                <?php esc_html_e(pll__("Your cart is empty")); ?>
             </h3>
-            <a href="<?php echo esc_url(get_permalink(pll_get_post(34))); ?>" class="btn btn-secondary mt-3 text-white">
-                <?php esc_html_e(pll__("Shop now"));?>
+            <a href="<?php echo esc_url(get_permalink(wc_get_cart_url())); ?>" class="btn btn-secondary mt-3 text-white">
+                <?php esc_html_e(pll__("Shop now")); ?>
             </a>
         </div>
     <?php endif; ?>
