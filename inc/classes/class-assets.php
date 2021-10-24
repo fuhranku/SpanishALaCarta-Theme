@@ -94,7 +94,7 @@ class Assets
             wp_enqueue_style('about-us-bundle');
         } else if (get_current_template_name() === "contact-us") {
             wp_enqueue_style('contact-us-bundle');
-        } else if (is_single()) {
+        } else if (is_single() && !is_product()) {
             wp_enqueue_style('single-bundle');
         } else if (is_shop() || is_product_category()) {
             wp_enqueue_style('archive-product-bundle');
