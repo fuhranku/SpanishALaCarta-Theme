@@ -23,9 +23,9 @@ $page_subtitle = function () {
         </h4>
         <div class="right-menu d-flex flex-wrap flex-lg-nowrap">
             <?php do_action('theme_wc_show_ordering'); ?>
-            <?php get_template_part("template-parts/store/archive-product/currency-switcher", "Woocommerce component", [
+            <?php /*get_template_part("template-parts/store/archive-product/currency-switcher", "Woocommerce component", [
                 "classes" => "mx-lg-3 ps-2 pe-3 my-3 my-lg-0"
-            ]); ?>
+            ]); */?>
             <?php get_search_form([
                 "filter" => "product"
             ]); ?>
