@@ -25,6 +25,6 @@ $empty_star = '<i class="far fa-star"></i>';
         <span class="country fs-5"><?php esc_html_e($args["country"]); ?></span>
     </p>
     <div>
-        <?php esc_html_e($args["description"]); ?>
+        <?php echo $args["description"]; ?>
     </div>
 </div>
