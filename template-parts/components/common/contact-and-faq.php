@@ -35,7 +35,7 @@ $links = array_filter($content["links"], function ($element) {
             <div>
                 <?php echo $content["contact_description"]; ?>
             </div>
-            <a href="<?php echo esc_url($button["url"]); ?>" class="btn btn-primary mb-5">
+            <a href="<?php echo esc_url($button["url"]); ?>" class="btn btn-primary mb-5 mt-5">
                 <?php esc_html_e($button["text"]); ?>
             </a>
             <div class="d-flex flex-row">
