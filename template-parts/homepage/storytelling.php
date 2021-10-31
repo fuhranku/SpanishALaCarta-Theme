@@ -14,9 +14,9 @@ $button = $content["button"];
             <h2 class="fw-bold mb-4">
                 <?php echo $content["title"]; ?>
             </h2>
-            <p>
-                <?php esc_html_e($content["description"]); ?>
-            </p>
+            <div>
+                <?php echo $content["description"]; ?>
+            </div>
             <a href="<?php echo esc_url($button["url"]); ?>" class="btn btn-primary mt-4 w-fit-content d-none d-lg-block" target="_blank">
                 <?php esc_html_e($button["text"]); ?>
                 <i class="fas fa-angle-right ms-2 ms-lg-4"></i>
