@@ -17,9 +17,9 @@ $button = $content["button"];
                 <h2 class="fw-bold mb-4 text-center text-lg-start">
                     <?php esc_html_e($content["title"]); ?>
                 </h2>
-                <p class="text-center text-lg-start">
-                    <?php esc_html_e($content["description"]); ?>
-                </p>
+                <div class="text-center text-lg-start">
+                    <?php echo $content["description"]; ?>
+                </div>
                 <ul class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start flex-lg-column theme-list mt-4 mt-lg-5 ps-0 mb-4 mb-lg-0">
                     <?php $item_1 = $items["item_1"]; ?>
                     <li class="d-flex flex-row align-items-center me-3 me-lg-0">
