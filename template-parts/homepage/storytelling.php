@@ -45,10 +45,8 @@ $button = $content["button"];
                     <h3 class="fw-bold mt-3">
                         <?php esc_html_e($item_2["title"]); ?>
                     </h3>
-                    <div class="text-center">
-                        <p>
-                            <?php esc_html_e($item_2["description"]); ?>
-                        </p>
+                    <div>
+                        <?php echo $item_2["description"]; ?>
                     </div>
                 </div>
                 <?php $item_3 = $content["items"]["item_3"]; ?>
