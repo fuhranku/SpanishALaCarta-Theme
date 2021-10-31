@@ -157,7 +157,7 @@ function theme_lazy_image($id, $classes = "", $alt = "", $width = null, $height 
 	$img_url = wp_get_attachment_image_src($id, "tiny-lazy");
 	$img_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
 ?>
-	<img class="<?php echo ('lazyload blur-up ' . $classes); ?>" data-sizes="auto" data-src="<?= $img_url[0]; ?>" data-srcset="<?php echo wp_get_attachment_image_srcset($id, "full"); ?>" alt="<?php echo $alt !== "" ? $alt : $img_alt ?>" <?php if ($width != null) : ?> width=<?= $width ?> <?php endif;
+	<img class="<?php echo ('lazyload blur-up ' . $classes); ?>" data-sizes="auto" src="<?= $img_url[0]; ?>" data-srcset="<?php echo wp_get_attachment_image_srcset($id, "full"); ?>" alt="<?php echo $alt !== "" ? $alt : $img_alt ?>" <?php if ($width != null) : ?> width=<?= $width ?> <?php endif;
 																																																																							if ($height != null) :
 																																																																								?> height=<?= $height ?> <?php endif; ?>>
 <?php
