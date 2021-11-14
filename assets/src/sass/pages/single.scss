@@ -3,9 +3,10 @@
 @import "../utils/imports";
 
 .post-thumbnail{
-    margin-top: -12rem;
+    margin-top: -20rem;
     object-fit: cover;
     border-radius: 40px;
+    max-height: 400px;
 }
 
 .related-posts{
