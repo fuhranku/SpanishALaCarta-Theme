@@ -7,7 +7,7 @@
 $recent_posts = wp_get_recent_posts(array(
     'numberposts' => 3, // Number of recent posts thumbnails to display
     'post_status' => 'publish', // Show only the published posts
-    'lang' => ''
+    'language' => get_locale()
 ));
 
  ?>
