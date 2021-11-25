@@ -59,6 +59,7 @@ pll_register_string("WooCommerce", "Your cart is empty", "Spanisch a la carte Th
 pll_register_string("WooCommerce", "Shop now", "Spanisch a la carte Theme");
 pll_register_string("WooCommerce", "Review for", "Spanisch a la carte Theme");
 pll_register_string("WooCommerce", "Reviews for", "Spanisch a la carte Theme");
+pll_register_string("WooCommerce", "related_products", "Spanisch a la carte Theme");
 
 
 
