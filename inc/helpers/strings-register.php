@@ -8,7 +8,9 @@
 pll_register_string("theme", "footer slogan", "Spanisch a la carte Theme");
 pll_register_string("theme", "footer newsletter title", "Spanisch a la carte Theme");
 pll_register_string("theme", "footer newsletter description", "Spanisch a la carte Theme");
+pll_register_string("theme", "6010 Kriens, Switzerland", "Spanisch a la carte Theme");
 pll_register_string("theme", "footer latest posts title", "Spanisch a la carte Theme");
+pll_register_string("theme", "Your email", "Spanisch a la carte Theme");
 pll_register_string("theme", "Privacy Policy", "Spanisch a la carte Theme");
 pll_register_string("theme", "Terms & Conditions", "Spanisch a la carte Theme");
 pll_register_string("theme", "Trial class", "Spanisch a la carte Theme");
