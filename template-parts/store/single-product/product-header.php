@@ -35,29 +35,38 @@ $product = wc_get_product(get_the_ID());
                 <?php
                 $currency_symbol = get_woocommerce_currency_symbol();
                 $bold_class = empty($product->get_sale_price()) ? "fw-bold" : "text-line-through text-disabled";
-                if (!empty($product->get_sale_price())) {
+                if (!$product->is_type('variable')) {
+                    if (!empty($product->get_sale_price())) {
+                        printf(
+                            '<span class="me-3 fw-bold"><span class="text-red">%1$s</span>%2$s</span>',
+                            $currency_symbol,
+                            $product->get_sale_price()
+                        );
+                    }
                     printf(
-                        '<span class="me-3 fw-bold"><span class="text-red">%1$s</span>%2$s</span>',
+                        '<span class="%3$s">%1$s%2$s</span>',
                         $currency_symbol,
-                        $product->get_sale_price()
+                        $product->get_regular_price(),
+                        $bold_class
                     );
                 }
-                printf(
-                    '<span class="%3$s">%1$s%2$s</span>',
-                    $currency_symbol,
-                    $product->get_regular_price(),
-                    $bold_class
-                );
                 ?>
             </h2>
-            <div class="d-flex my-3 flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
-                <a href="<?php echo esc_url(home_url("/") . "checkout/?add-to-cart=" . get_the_ID()); ?>" class="btn btn-primary me-md-3">
-                    <?php pll_e("Buy now");?>
-                </a>
-                <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" class="btn btn-header-alt mt-3 mt-md-0">
-                    <?php pll_e("Add to cart");?>
-                </a>
-            </div>
+            <?php
+            if ($product->is_type('variable')) {
+                woocommerce_variable_add_to_cart();
+            }
+            ?>
+            <?php if (!$product->is_type('variable')) : ?>
+                <div class="d-flex my-3 flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
+                    <a href="<?php echo esc_url(home_url("/") . "checkout/?add-to-cart=" . get_the_ID()); ?>" class="btn btn-primary me-md-3">
+                        <?php pll_e("Buy now"); ?>
+                    </a>
+                    <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" class="btn btn-header-alt mt-3 mt-md-0">
+                        <?php pll_e("Add to cart"); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="col-12 col-lg-6">
             <?php theme_lazy_image(get_post_thumbnail_id(), "w-100 object-fit-cover rounded-3"); ?>

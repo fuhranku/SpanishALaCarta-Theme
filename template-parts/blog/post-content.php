@@ -99,17 +99,28 @@ if (is_shop() || is_product_category() || is_product()) {
                 <?php
                 $currency_symbol = get_woocommerce_currency_symbol();
                 $bold_class = empty($product->get_sale_price()) ? "fw-bold" : "text-line-through text-disabled";
-                printf(
-                    '<span class="%3$s">%1$s%2$s</span>',
-                    $currency_symbol,
-                    $product->get_regular_price(),
-                    $bold_class
-                );
-                if (!empty($product->get_sale_price())) {
+                if (!$product->is_type('variable')) {
                     printf(
-                        '<span class="ms-3 fw-bold">%1$s%2$s</span>',
+                        '<span class="%3$s">%1$s%2$s</span>',
                         $currency_symbol,
-                        $product->get_sale_price()
+                        $product->get_regular_price(),
+                        $bold_class
+                    );
+                    if (!empty($product->get_sale_price())) {
+                        printf(
+                            '<span class="ms-3 fw-bold">%1$s%2$s</span>',
+                            $currency_symbol,
+                            $product->get_sale_price()
+                        );
+                    }
+                } else {
+
+                    printf(
+                        '<span class="%1$s">%2$s%3$s - %2$s%4$s</span>',
+                        $bold_class,
+                        $currency_symbol,
+                        $product->get_variation_price('min'),
+                        $product->get_variation_price('max'),
                     );
                 }
                 ?>
