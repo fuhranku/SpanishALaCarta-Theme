@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-3 ps-0 ps-xl-5 px-0 d-flex justify-content-center justify-content-lg-start pb-5 pb-lg-0">
-                <a href="<?php esc_url($button["url"]);?>" class="btn btn-nivelation-test fs-uppercase">
+                <a href="<?php echo esc_url($button["url"]);?>" class="btn btn-nivelation-test fs-uppercase">
                     <?php esc_html_e($button["text"]); ?>
                     <i class="fas fa-angle-right ms-2 ms-lg-4"></i>
                 </a>
