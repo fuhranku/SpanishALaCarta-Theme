@@ -10,6 +10,7 @@ namespace SPANISHALACARTE\Inc;
 
 use SPANISHALACARTE\Inc\Traits\Singleton;
 use WP_Customize_Image_Control;
+use DOMDocument;
 
 class SALC_THEME
 {
