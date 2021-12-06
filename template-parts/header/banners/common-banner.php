@@ -15,6 +15,8 @@ if (is_category()) {
     $title = pll__("Search") . " - " . pll__("Archive");
 } else if (is_single() || is_product()) {
     $title = "";
+} else if (is_404()){
+    $title = pll__("404 - Not found");
 }
 // else if (get_post_type() === 'post' || is_product() || $title === "") {
 //     $title = "";

@@ -1,4 +1,5 @@
 @import "../components/product-category";
+
 body {
   color: $secondary;
   line-height: normal;
@@ -25,6 +26,7 @@ h6,
 
 a {
   transition: 0.4s all ease-in-out;
+
   &:hover {
     color: $primary !important;
   }
@@ -42,6 +44,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   &.page-loaded {
     animation: fadeOut 0.8s forwards;
   }
@@ -53,6 +56,7 @@ a {
   color: $secondary !important;
   transition: all 0.4s ease-in-out;
   text-transform: capitalize;
+
   &:hover,
   &:active {
     background: $primary !important;
@@ -61,16 +65,17 @@ a {
   }
 }
 
-.btn-secondary{
+.btn-secondary {
   border-radius: 60px;
   background-color: $secondary;
   border-color: $secondary;
   padding: .5rem 2rem;
   transition: .4s all ease-in-out;
-  &:hover{
-      border-color: $secondary;
-      background-color: transparent;
-      color: $secondary !important;
+
+  &:hover {
+    border-color: $secondary;
+    background-color: transparent;
+    color: $secondary !important;
   }
 }
 
@@ -79,12 +84,14 @@ a {
     content: "";
     display: none;
   }
+
   .arrow-down {
     margin-left: 0.255em;
     transform: rotate(0);
     transform-origin: 0.3rem 40%;
     transition: 0.25s transform ease;
   }
+
   &.show {
     .arrow-down {
       transform: rotate(180deg);
@@ -96,6 +103,7 @@ a {
   color: $secondary !important;
   font-weight: normal;
   transition: 0.4s all ease-in-out;
+
   &:hover {
     color: $secondary !important;
     font-weight: bold;
@@ -107,6 +115,7 @@ a {
   border-bottom: 2px solid #c4c4c4;
   color: $secondary;
   padding: 0.6rem;
+
   &:focus-visible {
     outline: transparent;
   }
@@ -117,6 +126,7 @@ a {
   color: $secondary;
   padding: 0.6rem;
   resize: none;
+
   &:focus-visible {
     outline: transparent;
   }
@@ -125,6 +135,7 @@ a {
 form.theme-form {
   display: flex;
   align-items: center;
+
   input[type="text"],
   input[type="email"] {
     border-top-left-radius: 60px;
@@ -133,13 +144,16 @@ form.theme-form {
     padding: 0.5rem 0.9rem;
     border: 2px solid #d8d9d8;
     flex-grow: 100;
+
     &:focus-visible {
       outline: none;
     }
+
     &::placeholder {
       color: #1a24304b;
     }
   }
+
   button[type="submit"] {
     border-radius: 60px;
     color: $white;
@@ -154,6 +168,7 @@ form.theme-form {
   .cart-dropdown {
     cursor: pointer;
   }
+
   .cart-items-counter {
     background-color: $primary;
     color: #fff;
@@ -162,11 +177,13 @@ form.theme-form {
     width: 21px;
     height: 21px;
   }
+
   .cart-dropdown-menu {
     width: 400px;
     left: 50%;
     bottom: 0%;
     transform: translate(-90%, 98%);
+
     .dropdown-cart-list {
       .dropdown-cart-item {
         &:not(:last-child) {
@@ -177,12 +194,21 @@ form.theme-form {
   }
 }
 
+.page-404 {
+  font-size: 6rem;
+  margin-bottom: 0;
+  &.not-found {
+    font-size: 3rem;
+  }
+}
+
 @include media("<laptop-l") {
   #site-preloader .site-logo {
     width: 50vw;
     max-width: 300px;
     height: auto;
   }
+
   .section-shape {
     object-fit: cover;
   }
@@ -194,6 +220,7 @@ form.theme-form {
     justify-content: center;
     margin: 0 auto;
     gap: 1rem;
+
     input[type="text"],
     input[type="email"] {
       border-radius: 60px;
@@ -206,9 +233,11 @@ form.theme-form {
   0% {
     opacity: 1;
   }
+
   1% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
