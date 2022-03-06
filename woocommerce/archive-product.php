@@ -17,16 +17,34 @@ if (!is_search()) {
     $ordering['orderby']     = stristr($ordering['orderby'], 'price') ? 'meta_value_num' : $ordering['orderby'];
     $products_per_page       = apply_filters('loop_shop_per_page', wc_get_default_products_per_row() * wc_get_default_product_rows_per_page());
 
-    $products_query       = wc_get_products(array(
-        'meta_key'             => '_price',
-        'status'               => 'publish',
-        'limit'                => $products_per_page,
-        'page'                 => $paged,
-        'paginate'             => true,
-        'return'               => 'ids',
-        'orderby'              => $ordering['orderby'],
-        'order'                => $ordering['order'],
-    ));
+    global $wp_query;
+    $category = $wp_query->get_queried_object();
+    $slug = $category->slug;
+
+    if ($slug == '') {
+        $products_query       = wc_get_products(array(
+            'meta_key'             => '_price',
+            'status'               => 'publish',
+            'limit'                => $products_per_page,
+            'page'                 => $paged,
+            'paginate'             => true,
+            'return'               => 'ids',
+            'orderby'              => $ordering['orderby'],
+            'order'                => $ordering['order'],
+        ));
+    } else {
+        $products_query       = wc_get_products(array(
+            'meta_key'             => '_price',
+            'status'               => 'publish',
+            'limit'                => $products_per_page,
+            'page'                 => $paged,
+            'paginate'             => true,
+            'return'               => 'ids',
+            'orderby'              => $ordering['orderby'],
+            'order'                => $ordering['order'],
+            'category'             => [$category->slug]
+        ));
+    }
 
     wc_set_loop_prop('current_page', $paged);
     wc_set_loop_prop('is_paginated', wc_string_to_bool(true));
