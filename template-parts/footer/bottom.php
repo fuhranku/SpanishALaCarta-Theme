@@ -11,7 +11,7 @@ $menu = wp_get_nav_menu_items($menu_id);
 ?>
 
 <div class="container-fluid bg-dark-blue d-flex flex-column justify-content-center align-items-center py-3">
-    <p class="fw-bold fs-6 text-white text-center text-lg-start">Copyright <?php date("Y") ?> © Spanisch a la carte</p>
+    <p class="fw-bold fs-6 text-white text-center text-lg-start">Copyright <?php echo date("Y") ?> © Spanisch a la carte</p>
     <?php if (!empty($menu) && is_array($menu)) : ?>
         <div class="d-flex flex-wrap flex-lg-nowrap d-flex-lg-inline justify-content-center">
             <!-- Menu -->
