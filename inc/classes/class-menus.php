@@ -26,7 +26,8 @@
     public function register_menus(){
         register_nav_menus( [
             'salc-header-menu' => esc_html__( 'Header Menu', 'spanishalacarta' ),
-            'salc-footer-menu' => esc_html__( 'Footer Menu', 'spanishalacarta' )
+            'salc-footer-menu' => esc_html__( 'Footer Menu', 'spanishalacarta' ),
+            'salc-bottom-footer-menu' => esc_html__( 'Policies Menu', 'spanishalacarta' ),
         ]);
     }
 

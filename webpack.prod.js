@@ -1,8 +1,10 @@
 const path = require('path');
 const common = require('./webpack.common');
-const { merge } = require('webpack-merge');
+const {
+    merge
+} = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack'); // to access built-in plugins
 
@@ -16,12 +18,10 @@ module.exports = merge(common, {
         filename: 'js/[name].bundle.js',
         clean: true
     },
-    module:{
-        rules:[
-            {
+    module: {
+        rules: [{
                 test: /\.scss$/,
-                use: [
-                    {
+                use: [{
                         loader: MiniCssExtractPlugin.loader,
                     },
                     "css-loader",
@@ -31,20 +31,18 @@ module.exports = merge(common, {
             },
             {
                 test: /\.(png|jpg|svg|jpeg|ico|webp|gif)$/,
-                use: [
-                    {
-                      loader: 'file-loader',
-                      options: {
-                        publicPath: "https://staging.frankponte.com/wp-content/themes/spanischalacarte/assets/build/images",
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        publicPath: "http://localhost/SpanishALaCarta/wp-content/themes/SpanishALaCarta/assets/build/images",
                         outputPath: "/images",
                         name: '[name].[ext]',
-                      }
                     }
-                  ]
+                }]
             },
         ],
     },
-    plugins:[
+    plugins: [
         new MiniCssExtractPlugin({
             filename: 'css/[name].bundle.css',
         }),
@@ -57,25 +55,13 @@ module.exports = merge(common, {
             THEME_URL: "https://staging.frankponte.com/wp-content/themes/spanischalacarte/"
         })
     ],
-    optimization:{
+    optimization: {
+        minimize: true,
         minimizer: [
-            new OptimizeCssAssetsPlugin({
-                // cssnano configuration
-                cssProcessorPluginOptions: {
-                  preset: ['default', {
-                    discardComments: {
-                      removeAll: true
-                    }
-                  }],
-                },
-            }),
-            new TerserPlugin({
-                terserOptions: {
-                    compress:{
-                        // pure_funcs: [ 'console.log' ]
-                    }
-                }
-            }),
+            new TerserPlugin(), 
+            `...`,
+            new CssMinimizerPlugin(),
         ]
     },
+    plugins: [new MiniCssExtractPlugin()],
 });

@@ -1,0 +1,55 @@
+.post-featured-image{
+    border-radius: 30px;
+}
+
+.post-author{
+    a{
+        text-decoration: none;
+        color: $secondary;
+        transition: .2s all ease-in-out;
+        .avatar{
+            background-color: $secondary;
+            color: $white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .2s all ease-in-out;
+        }
+        &:hover, &:active, &:focus{
+            color: $primary;
+            text-decoration: underline;
+            .avatar{
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+.post-date{
+    div{
+        text-decoration: none;
+        color: $secondary;
+        .calendar-icon{
+            font-size: 22px;
+        }
+    }
+}
+
+.post-title, .post-read-more{
+    color: $secondary;
+    text-decoration: none;
+    transition: .2s all ease-in-out;
+    &:hover, &:active, &:focus{
+        color: $primary;
+        text-decoration: underline;
+    }
+}
+
+.post-read-more{
+    &:hover, &:active, &:focus{
+        text-decoration: none;
+    }
+}

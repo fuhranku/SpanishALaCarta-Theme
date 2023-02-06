@@ -53,3 +53,22 @@ $("#footer-newsletter-form").on("submit", (e) => {
     }
   );
 });
+
+$(".header-menu-cart .cart-dropdown").on("click", function () {
+  if ($(window).width() < 1024) {
+    window.location.replace(`${window.location.origin}/cart`);
+    return;
+  }
+  const cartDropdownMenu = $(".header-menu-cart").find(".cart-dropdown-menu");
+  if (cartDropdownMenu.hasClass("d-none")) {
+    $(this).addClass("shadow");
+    cartDropdownMenu.removeClass("d-none");
+  } else {
+    $(this).removeClass("shadow");
+    cartDropdownMenu.addClass("d-none");
+  }
+});
+
+$(".cart-dropdown-menu").on("mouseleave", function () {
+  $(this).addClass("d-none");
+});

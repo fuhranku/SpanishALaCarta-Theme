@@ -15,7 +15,7 @@ $button = $content["button"]
             <h2 class="fw-bold mb-4 text-center text-lg-start">
                 <?php echo $content["title"]; ?>
             </h2>
-            <div class="text-center text-lg-start">
+            <div>
                 <?php echo $content["copywriting"]; ?>
             </div>
             <a href="<?php echo esc_url($button["page_link"]); ?>" class="btn btn-primary mt-4 w-fit-content mx-auto">

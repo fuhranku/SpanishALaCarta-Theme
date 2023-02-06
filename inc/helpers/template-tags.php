@@ -157,7 +157,7 @@ function theme_lazy_image($id, $classes = "", $alt = "", $width = null, $height 
 	$img_url = wp_get_attachment_image_src($id, "tiny-lazy");
 	$img_alt = get_post_meta($id, '_wp_attachment_image_alt', true);
 ?>
-	<img class="<?php echo ('lazyload blur-up ' . $classes); ?>" data-sizes="auto" data-src="<?= $img_url[0]; ?>" data-srcset="<?php echo wp_get_attachment_image_srcset($id, "full"); ?>" alt="<?php echo $alt !== "" ? $alt : $img_alt ?>" <?php if ($width != null) : ?> width=<?= $width ?> <?php endif;
+	<img class="<?php echo ('lazyload blur-up ' . $classes); ?>" data-sizes="auto" src="<?= $img_url[0]; ?>" data-srcset="<?php echo wp_get_attachment_image_srcset($id, "full"); ?>" alt="<?php echo $alt !== "" ? $alt : $img_alt ?>" <?php if ($width != null) : ?> width=<?= $width ?> <?php endif;
 																																																																							if ($height != null) :
 																																																																								?> height=<?= $height ?> <?php endif; ?>>
 <?php
@@ -206,6 +206,11 @@ function theme_get_page_banner()
 			];
 		}
 		return get_template_part('template-parts/header/banners/common-banner', 'All pages except homepage', $arguments);
+	} else if (is_shop() || is_product_category()) {
+		$arguments = [
+			"title" => woocommerce_page_title(false)
+		];
+		return get_template_part('template-parts/header/banners/common-banner', 'Woocommerce store', $arguments);
 	} else {
 		$page_slug = get_current_template_name() . "-";
 		$ACF_banner_group_slug = $page_slug . "banner";
@@ -290,4 +295,10 @@ function theme_get_comment_date($comment_ID)
 	} else {
 		printf('%1$s', get_comment_date("m/d/y", $comment_ID));
 	}
+}
+
+function getCurrentUrl()
+{
+	$protocol = is_ssl() ? 'https://' : 'http://';
+	return ($protocol) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }

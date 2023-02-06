@@ -68,6 +68,20 @@ class Assets
             filemtime(THEME_BUILD_CSS_DIR_PATH . '/single.bundle.css'),
             'all'
         );
+        wp_register_style(
+            'archive-product-bundle',
+            THEME_BUILD_CSS_URI . '/archive_product.bundle.css',
+            [],
+            filemtime(THEME_BUILD_CSS_DIR_PATH . '/archive_product.bundle.css'),
+            'all'
+        );
+        wp_register_style(
+            'single-product-bundle',
+            THEME_BUILD_CSS_URI . '/single_product.bundle.css',
+            [],
+            filemtime(THEME_BUILD_CSS_DIR_PATH . '/single_product.bundle.css'),
+            'all'
+        );
 
         // Enqueue Styles
         wp_enqueue_style('vendor-bundle');
@@ -82,6 +96,10 @@ class Assets
             wp_enqueue_style('contact-us-bundle');
         } else if (is_single()) {
             wp_enqueue_style('single-bundle');
+        } else if (is_shop() || is_product_category()) {
+            wp_enqueue_style('archive-product-bundle');
+        } else if (is_product()) {
+            wp_enqueue_style('single-product-bundle');
         }
     }
 
@@ -139,8 +157,23 @@ class Assets
             filemtime(THEME_BUILD_JS_DIR_PATH . '/single.bundle.js'),
             true
         );
+        wp_register_script(
+            'archive-product-bundle',
+            THEME_BUILD_JS_URI . '/archive_product.bundle.js',
+            ['jquery'],
+            filemtime(THEME_BUILD_JS_DIR_PATH . '/archive_product.bundle.js'),
+            true
+        );
+        wp_register_script(
+            'single-product-bundle',
+            THEME_BUILD_JS_URI . '/single_product.bundle.js',
+            ['jquery'],
+            filemtime(THEME_BUILD_JS_DIR_PATH . '/single_product.bundle.js'),
+            true
+        );
         wp_enqueue_script('vendor-bundle');
         wp_enqueue_script('main-bundle');
+
         if (is_front_page()) {
             wp_enqueue_script('homepage-bundle');
         } else if (is_home() || is_author() || is_category() || is_search()) {
@@ -152,11 +185,17 @@ class Assets
             wp_localize_script('contact-us-bundle', 'theme_vars', [
                 'ajax_nonce' => wp_create_nonce("contact-submit-action")
             ]);
-        } else if (is_single()) {
+        } else if (is_single() && !is_product()) {
             wp_localize_script('single-bundle', 'theme_vars', [
                 'comment_ajax_nonce' => wp_create_nonce("comment-submit-action"),
             ]);
             wp_enqueue_script('single-bundle');
+        }
+        if (is_shop() || is_product_category()) {
+            wp_enqueue_script('archive-product-bundle');
+        }
+        if (is_product()) {
+            wp_enqueue_script('single-product-bundle');
         }
         // Send PHP Variables to js
         wp_localize_script('main-bundle', 'global_vars', [

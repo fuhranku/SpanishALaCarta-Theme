@@ -6,15 +6,14 @@
  * @author Frank Ponte
  * 
  */
+$search_filter = array_key_exists("filter", $args) ? $args["filter"] : "post";
 ?>
 
-<form action="/" method="get" class="search-form w-100 d-flex">
-    <label for="search" class="sr-only">Search in <?php echo home_url( '/' ); ?></label>
-    <input type="text" name="s" id="search" value="<?php the_search_query();?>" placeholder="Buscar" />
+<form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="search-form w-100 d-flex">
+    <label for="search" class="sr-only">Search in <?php echo home_url('/'); ?></label>
+    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="<?php esc_attr_e(pll__("Search"));?>" />
     <button type="submit">
         <i class="fas fa-search"></i>
     </button>
-    <?php if(is_home() || is_search() || is_author()):?>
-        <input type="hidden" value="post" name="post_type" id="post_type" />
-    <?php endif; ?>
+    <input type="hidden" value="<?php esc_attr_e($search_filter); ?>" name="post_type" id="post_type" />
 </form>

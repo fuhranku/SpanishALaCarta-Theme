@@ -14,7 +14,7 @@
         <?php pll_e("footer newsletter description"); ?>
     </p>
     <form id="footer-newsletter-form">
-        <input type="email" name="email" placeholder="johndoe@email.com">
+        <input type="email" name="email" placeholder="<?php pll_e("Your email"); ?>">
         <button class="btn btn-newsletter-submit">
             <i class="fas fa-angle-right"></i>
         </button>

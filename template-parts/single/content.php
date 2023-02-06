@@ -7,6 +7,9 @@
  * 
  */
 get_template_part("template-parts/single/post-header");
+$twitter_link = "https://twitter.com/intent/tweet?url=" . getCurrentUrl();
+$facebook_link = "https://facebook.com/sharer.php?u=" . getCurrentUrl();
+$linkedin_link = "https://www.linkedin.com/sharing/share-offsite/?url=" . getCurrentUrl();
 ?>
 <div class="container-fluid px-5 px-lg-0">
     <?php the_content(); ?>
@@ -17,13 +20,13 @@ get_template_part("template-parts/single/post-header");
         <?php pll_e("share_post_text"); ?>
     </h3>
     <div class="d-flex flex-row">
-        <a href="https://twitter.com/share?url=<?php echo get_permalink(); ?>" class="social-link me-4 hvr-hang" onclick="window.open(this.href, 'Twitter share','width=500', 'height=400');return false;">
+        <a href="<?php echo esc_url($twitter_link); ?>" class="share-link social-link me-4 hvr-hang">
             <i class="fab fa-twitter"></i>
         </a>
-        <a href="#" class="social-link me-4 hvr-hang">
+        <a href="<?php echo esc_url($facebook_link); ?>" class="share-link social-link me-4 hvr-hang">
             <i class="fab fa-facebook"></i>
         </a>
-        <a href="#" class="social-link hvr-hang">
+        <a href="<?php echo esc_url($linkedin_link); ?>" class="share-link social-link hvr-hang">
             <i class="fab fa-linkedin"></i>
         </a>
     </div>

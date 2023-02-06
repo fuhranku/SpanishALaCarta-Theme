@@ -19,7 +19,7 @@ $content = get_field("why_us_section");
         </div>
         <div class="col-12 col-lg-6">
             <div class="ratio ratio-16x9">
-                <?php theme_lazy_video(143, "", "shadow-red rounded"); ?>
+                <?php theme_lazy_video($content["video"], "", "shadow-red rounded"); ?>
             </div>
         </div>
         <div class="col-12 d-block d-lg-none mt-5">

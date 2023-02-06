@@ -5,7 +5,7 @@
  * @author Frank Ponte
  */
 $image_id = array_key_exists("image_id", $args) ? $args['image_id'] : 0;
-$title = array_key_exists("title", $args) ? $args['title'] : "";
+$title = array_key_exists("title", $args) ? $args['title'] : get_the_title();
 $subtitle = array_key_exists("subtitle", $args) ? $args['subtitle'] : "";
 if (is_category()) {
     $title = pll__("Category") . " - " . pll__("Archive");
@@ -13,9 +13,16 @@ if (is_category()) {
     $title = pll__("Author") . " - " . pll__("Archive");
 } else if (is_search()) {
     $title = pll__("Search") . " - " . pll__("Archive");
-} else if (get_current_template_name() === "theme-empty") {
-    $title = get_the_title();
+} else if (is_single() || is_product()) {
+    $title = "";
+} else if (is_404()){
+    $title = pll__("404 - Not found");
 }
+// else if (get_post_type() === 'post' || is_product() || $title === "") {
+//     $title = "";
+// } else if (get_current_template_name() === "theme-empty" || basename(get_page_template()) === 'page.php' || is_shop() || $title === "") {
+//     $title = get_the_title();
+// }
 ?>
 
 <section class="common-banner position-relative d-flex flex-column justify-content-center align-items-center px-5 pb-5 z-n1">

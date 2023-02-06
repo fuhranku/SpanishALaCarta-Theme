@@ -22,9 +22,9 @@ $faqs = array_filter($content["faqs"], function ($element) {
             <h2 class="fw-bold mb-4 text-center text-lg-start">
                 <?php echo $how_can_we_help["title"]; ?>
             </h2>
-            <p class="text-center text-lg-start">
-                <?php esc_html_e($how_can_we_help["description"]); ?>
-            </p>
+            <div>
+                <?php echo $how_can_we_help["description"]; ?>
+            </div>
             <div class="social-media border-top d-flex justify-content-center justify-content-md-between align-items-center flex-wrap pt-4 pb-5">
                 <h5 class="fw-bold mb-4 mb-md-0">
                     <?php echo $how_can_we_help["social_media"]["title"]; ?>

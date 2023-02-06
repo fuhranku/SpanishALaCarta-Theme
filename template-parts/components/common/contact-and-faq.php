@@ -32,10 +32,10 @@ $links = array_filter($content["links"], function ($element) {
             <h3 class="mb-4 text-center fw-bold">
                 <?php echo $content["contact_title"]; ?>
             </h3>
-            <p class="text-center">
+            <div>
                 <?php echo $content["contact_description"]; ?>
-            </p>
-            <a href="<?php echo esc_url($button["url"]); ?>" class="btn btn-primary mb-5">
+            </div>
+            <a href="<?php echo esc_url($button["url"]); ?>" class="btn btn-primary mb-5 mt-5">
                 <?php esc_html_e($button["text"]); ?>
             </a>
             <div class="d-flex flex-row">

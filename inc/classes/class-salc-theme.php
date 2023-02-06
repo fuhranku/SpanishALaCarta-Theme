@@ -10,6 +10,7 @@ namespace SPANISHALACARTE\Inc;
 
 use SPANISHALACARTE\Inc\Traits\Singleton;
 use WP_Customize_Image_Control;
+use DOMDocument;
 
 class SALC_THEME
 {
@@ -52,6 +53,19 @@ class SALC_THEME
 		add_action('wp_ajax_theme_send_newsletter_form', [$this, 'send_newsletter_form']);
 		add_action('wp_ajax_nopriv_theme_send_comment_form', [$this, 'send_comment_form']);
 		add_action('wp_ajax_theme_send_comment_form', [$this, 'send_comment_form']);
+
+		/**
+		 * WooCommerce
+		 */
+		add_action('after_setup_theme', [$this, 'theme_add_woocommerce_support']);
+		add_action('theme_wc_show_ordering', 'woocommerce_catalog_ordering', 30);
+		add_action('theme_review_before', [$this, 'theme_review_before'], 0);
+
+		/**
+		 * Shortcodes
+		 */
+
+		add_shortcode('product_additional_information', [$this, 'display_product_additional_information']);
 	}
 
 	public function setup_theme()
@@ -445,5 +459,49 @@ class SALC_THEME
 			wp_send_json(null, 400);
 		}
 		wp_die();
+	}
+
+	function theme_add_woocommerce_support()
+	{
+		add_theme_support('woocommerce');
+	}
+
+	function display_product_additional_information($atts)
+	{
+
+		// Shortcode attribute (or argument)
+		$atts = shortcode_atts(array(
+			'id'    => ''
+		), $atts, 'product_additional_information');
+
+		// If the "id" argument is not defined, we try to get the post Id
+		if (!(!empty($atts['id']) && $atts['id'] > 0)) {
+			$atts['id'] = get_the_id();
+		}
+
+		// We check that the "id" argument is a product id
+		if (get_post_type($atts['id']) === 'product') {
+			$product = wc_get_product($atts['id']);
+		}
+		// If not we exit
+		else {
+			return;
+		}
+
+		ob_start(); // Start buffering
+
+		do_action('woocommerce_product_additional_information', $product);
+
+		return ob_get_clean(); // Return the buffered outpout
+	}
+
+	function theme_review_before($comment_id)
+	{
+		echo sprintf(
+			'
+			<div class="avatar me-4 d-none d-md-flex">
+				<i class="fas fa-user"></i>
+			</div>',
+		);
 	}
 }

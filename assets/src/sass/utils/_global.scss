@@ -35,6 +35,14 @@
   color: $primary;
 }
 
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
 .bg-yellow {
   background-color: $yellow;
 }
@@ -51,8 +59,16 @@
   background: linear-gradient(91.5deg, #3d70b1 11.77%, #ff2243 136.6%);
 }
 
+.bg-gray {
+  background-color: $white;
+}
+
 .shadow-red {
   box-shadow: 10px 17px $primary;
+}
+
+.h-separator {
+  height: 1px;
 }
 
 .vertical-separator {
@@ -63,6 +79,19 @@
   &.right {
     left: 100%;
   }
+}
+
+.text-line-through {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 34, 67, 1);
+}
+
+.text-disabled {
+  color: rgba($secondary, 0.3);
+}
+
+.text-blue {
+  color: $secondary !important;
 }
 
 .title-separator {
@@ -113,5 +142,23 @@
   .ays-abs-fs {
     width: 80%;
     margin: 0 auto;
+  }
+}
+
+.product-price {
+  background: rgba(6, 100, 255, 0.15);
+}
+
+.btn-add-to-cart {
+  background: transparent;
+  border: 2px solid $secondary;
+  color: $secondary !important;
+  transition: all 0.4s ease-in-out;
+  text-transform: capitalize;
+  &:hover,
+  &:active {
+    background: $primary;
+    border-color: $primary;
+    color: $white !important;
   }
 }

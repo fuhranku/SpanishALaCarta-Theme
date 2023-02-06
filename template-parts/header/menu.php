@@ -9,6 +9,7 @@ $menu_class = \SPANISHALACARTE\Inc\Menus::get_instance();
 $header_menu_id = $menu_class->get_menu_id('salc-header-menu');
 $header_menu = wp_get_nav_menu_items($header_menu_id);
 $home_banner = is_front_page();
+global $woocommerce;
 ?>
 
 <div class="collapse navbar-collapse justify-content-end" id="headerNavbar">
@@ -63,8 +64,19 @@ $home_banner = is_front_page();
             </ul>
         <?php endif; ?>
     </nav>
-    <nav class="header-menu ms-0 ms-lg-4 mt-4 mt-lg-0">
-        <a href="https://calendly.com/spanischalacarte/20min" class="btn btn-header<?php echo !$home_banner ? '-alt' : ''; ?>" target="_blank">
+    <nav class="header-menu ms-0 ms-lg-4 mt-4 mt-lg-0 d-flex">
+        <div class="header-menu-cart me-3 position-relative">
+            <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
+                <div class="cart-items-counter position-absolute small rounded-circle px-1 d-flex align-items-center justify-content-center">
+                    <?php esc_html_e($woocommerce->cart->cart_contents_count); ?>
+                </div>
+            <?php endif; ?>
+            <div class="cart-dropdown rounded-circle d-flex align-items-center justify-content-center p-3 <?php esc_attr_e(is_front_page() ? "bg-white" : "bg-dark-blue text-white"); ?>">
+                <i class="fas fa-shopping-cart fs-5"></i>
+            </div>
+            <?php get_template_part("template-parts/header/cart-dropdown-menu"); ?>
+        </div>
+        <a href="https://calendly.com/spanischalacarte/20min" class="align-self-center btn btn-header<?php echo !$home_banner ? '-alt' : ''; ?>" target="_blank">
             <?php pll_e("Trial class"); ?>
         </a>
     </nav>
