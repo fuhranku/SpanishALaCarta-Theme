@@ -35,8 +35,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new webpack.EnvironmentPlugin({
-            URL: "http://localhost/HSM_phase4/",
-            THEME_URL: "http://localhost/HSM_phase4/wp-content/themes/HammersportMarketing/"
+            URL: "http://localhost/SpanishALaCarta/",
+            THEME_URL: "http://localhost/SpanishALaCarta/wp-content/themes/SpanishALaCarta/"
         })
     ],
     watch: true,
