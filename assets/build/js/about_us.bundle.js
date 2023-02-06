@@ -1,1 +1,1 @@
-(self.webpackChunkSpanishALaCarte=self.webpackChunkSpanishALaCarte||[]).push([[866],{836:function(){}},function(n){"use strict";n.O(0,[179],(function(){return a=836,n(n.s=a);var a}));n.O()}]);
+"use strict";(self.webpackChunkSpanishALaCarte=self.webpackChunkSpanishALaCarte||[]).push([[866],{836:function(){}},function(n){n.O(0,[179],(function(){return a=836,n(n.s=a);var a}));n.O()}]);
