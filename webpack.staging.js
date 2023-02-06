@@ -21,9 +21,8 @@ module.exports = merge(common, {
     module: {
         rules: [{
                 test: /\.scss$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                    },
+                use: [
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "resolve-url-loader",
                     "sass-loader"
@@ -45,6 +44,7 @@ module.exports = merge(common, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'css/[name].bundle.css',
+
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -58,10 +58,9 @@ module.exports = merge(common, {
     optimization: {
         minimize: true,
         minimizer: [
-            new TerserPlugin(), 
+            new TerserPlugin(),
             `...`,
             new CssMinimizerPlugin(),
         ]
     },
-    plugins: [new MiniCssExtractPlugin()],
 });
