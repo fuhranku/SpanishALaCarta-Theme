@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Variable product add to cart
  *
@@ -13,7 +12,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.5.5
+ * @version 6.1.0
  */
 
 defined('ABSPATH') || exit;
