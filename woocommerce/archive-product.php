@@ -1,11 +1,24 @@
 <?php
-
 /**
- * Archive product template
- * 
- * @package spanischalacarte
+ * The Template for displaying product archives, including the main shop page which is a post type archive
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 3.4.0
  */
-get_header();
+
+defined( 'ABSPATH' ) || exit;
+
+get_header( 'shop' );
+
 // Code taken from:  https://cfxdesign.com/create-a-custom-woocommerce-product-loop-the-right-way/
 if (!function_exists('wc_get_products')) {
     return;
@@ -87,4 +100,4 @@ if (!is_search()) {
 </section>
 
 <?php
-get_footer();
+get_footer( 'shop' );
