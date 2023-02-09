@@ -76,7 +76,7 @@ global $woocommerce;
             </div>
             <?php get_template_part("template-parts/header/cart-dropdown-menu"); ?>
         </div>
-        <a href="https://calendly.com/spanischalacarte/20min" class="align-self-center btn btn-header<?php echo !$home_banner ? '-alt' : ''; ?>" target="_blank">
+        <a href="https://tidycal.com/spanischalacarte/free-trial-class" class="align-self-center btn btn-header<?php echo !$home_banner ? '-alt' : ''; ?>" target="_blank">
             <?php pll_e("Trial class"); ?>
         </a>
     </nav>
