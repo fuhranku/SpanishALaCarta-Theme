@@ -10,7 +10,9 @@
 <ul class="comments-container my-5 px-0 px-md-3">
     <?php
         $args = array(
-            'post_id' => get_the_ID() // use user_id
+            'post_id' => get_the_ID(), // use user_id,
+            'status' => "approve",
+            'max_depth' => 2
         );
         $comments = get_comments( $args );
         foreach ( $comments as $comment ) :
