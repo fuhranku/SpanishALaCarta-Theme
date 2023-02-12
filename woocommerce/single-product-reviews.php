@@ -41,8 +41,17 @@ if (!comments_open()) {
 		</h2>
 
 		<?php if (have_comments()) : ?>
+			<?php 
+				$args = array(
+					'post_id' => get_the_ID(),
+					'post_type' => 'product',
+					'status' => "approve",
+					'max_depth' => 2
+				);
+				$comments = get_comments( $args );
+			?>
 			<ul class="comments-container my-5 px-0 px-md-3">
-				<?php wp_list_comments(apply_filters('woocommerce_product_review_list_args', array('callback' => 'woocommerce_comments'))); ?>
+				 <?php wp_list_comments( array( 'callback' => 'woocommerce_comments' ), $comments); ?>
 			</ul>
 
 			<?php
