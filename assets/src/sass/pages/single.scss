@@ -2,35 +2,38 @@
 @import "../vendors-extensions/include-media";
 @import "../utils/imports";
 
-.post-thumbnail{
+.post-thumbnail {
     margin-top: -14rem;
     object-fit: cover;
     border-radius: 40px;
     max-height: 400px;
 }
 
-.related-posts{
-    .inner-container{
+.related-posts {
+    .inner-container {
         overflow: hidden;
     }
 }
-.related-post{
+
+.related-post {
     width: 320px;
-    img{
+
+    img {
         max-height: 221px;
         object-fit: cover;
         border-radius: 30px;
     }
 }
 
-.newsletter{
+.newsletter {
     border-radius: 30px;
 }
 
-.comment{
+.comment {
     display: flex;
     flex-wrap: wrap;
-    .avatar{
+
+    .avatar {
         width: 80px;
         height: 80px;
         border-radius: 50%;
@@ -40,20 +43,30 @@
         justify-content: center;
         flex-shrink: 0;
     }
-    ul.children{
+
+    ul.children {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         margin-left: 5%;
         margin-top: 1%;
-        background: #ededed;
+        
+        li.comment {
+            background: #ededed;
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
     }
 }
 
-@include media("<=mobile-l"){
-    .related-post{
+@include media("<=mobile-l") {
+    .related-post {
         width: 50vw;
     }
-    .newsletter{
+
+    .newsletter {
         border-radius: 0;
     }
 }
