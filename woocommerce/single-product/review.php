@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 ?>
-<li class="comment d-flex align-items-start my-4" id="li-comment-<?php comment_ID(); ?>">
+<li class="comment d-flex align-items-start px-5 py-4" id="li-comment-<?php comment_ID(); ?>">
 
 
     <?php
