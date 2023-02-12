@@ -8,7 +8,9 @@
  */
 $args = array(
     'post_id' => get_the_ID(),
-    'count'   => true // Return only the count.
+    'count'   => true, // Return only the count.
+    'status' => "approve",
+    'max_depth' => 2
 );
 $comments_count = get_comments($args);
 ?>
