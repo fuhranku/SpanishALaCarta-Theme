@@ -1,0 +1,17 @@
+#site-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(91.5deg, #3d70b1 11.77%, #ff2243 136.6%);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    &.page-loaded {
+      animation: fadeOut 0.8s forwards;
+    }
+  }
