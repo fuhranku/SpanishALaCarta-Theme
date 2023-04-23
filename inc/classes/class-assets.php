@@ -85,6 +85,7 @@ class Assets
         );
 
         // Enqueue Styles
+        wp_enqueue_style('preloader-bundle');
         wp_enqueue_style('vendor-bundle-async');
         wp_enqueue_style('main-bundle-async');
         if (is_front_page()) {
