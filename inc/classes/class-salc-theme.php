@@ -235,7 +235,9 @@ class SALC_THEME
 					// The figure element
 					$figure = $dom->getElementsByTagName("figure")[0];
 					$figureClass = $figure->attributes["class"]->value;
-
+					 if (!str_contains($figureClass, "wp-block-image")){
+						continue;
+					 }
 
 					// The below lines are used to extrace the size of the image.
 					// The size of the image is added to the class in the form size-{size}
